@@ -37,7 +37,5 @@ public class JsonToXml {
         serializer.setTypeHintsEnabled(false);
         String xml = serializer.write( json );  
         System.out.println(xml);   
-
       }
-
 }
