@@ -12,9 +12,11 @@ import org.apache.commons.io.IOUtils;
 /**
  *
  * @author Legrand Mathieu
+ * @author Mercier Guillaume
+ * 
  */
 
-// inspiré de
+// Inspiré de
 // http://answers.oreilly.com/topic/279-how-to-convert-json-to-xml-in-java
 
 public class JsonToXml {
@@ -26,6 +28,10 @@ public class JsonToXml {
 		XMLSerializer serializer = new XMLSerializer();
 		JSON json = JSONSerializer.toJSON(jsonData);
 
+		serializer.setRootName("Root");
+        serializer.setTypeHintsEnabled(false);
+        String xml = serializer.write( json );  
+        System.out.println(xml);
 	}
 
 }
