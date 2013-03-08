@@ -19,13 +19,19 @@ import org.apache.commons.io.IOUtils;
 
 public class JsonToXml {
 
-	public void convert() throws IOException {
-		InputStream is = JsonToXml.class.getResourceAsStream("moodle.json");
-		String jsonData = IOUtils.toString(is);
+     /**
+     *
+     * @throws IOException IOEXception s'il y a un problème
+     * de lecture du fichier
+     */
+      public final void convert() throws IOException {
+        InputStream is =
+           JsonToXml.class.getResourceAsStream("moodle.json");
+        String jsonData = IOUtils.toString(is);
 
-		XMLSerializer serializer = new XMLSerializer();
-		JSON json = JSONSerializer.toJSON(jsonData);
+        XMLSerializer serializer = new XMLSerializer();
+        JSON json = JSONSerializer.toJSON(jsonData);
 
-	}
+      }
 
 }
