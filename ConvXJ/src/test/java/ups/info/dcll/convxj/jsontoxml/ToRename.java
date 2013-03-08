@@ -25,7 +25,7 @@ public class ToRename
      */
     public static Test suite()
     {
-        return new TestSuite( ToRename.class );
+        return new TestSuite( JsonToXml.class );
     }
 
     /**
