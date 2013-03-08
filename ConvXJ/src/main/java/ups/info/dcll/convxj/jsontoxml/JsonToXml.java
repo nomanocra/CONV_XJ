@@ -12,6 +12,8 @@ import org.apache.commons.io.IOUtils;
 /**
  *
  * @author Legrand Mathieu
+ * @author Mercier Guillaume
+ * 
  */
 
 // inspiré de
@@ -30,7 +32,11 @@ public class JsonToXml {
         String jsonData = IOUtils.toString(is);
 
         XMLSerializer serializer = new XMLSerializer();
-        JSON json = JSONSerializer.toJSON(jsonData);
+        JSON json = JSONSerializer.toJSON(jsonData); 
+        serializer.setRootName("SampleJSON");
+        serializer.setTypeHintsEnabled(false);
+        String xml = serializer.write( json );  
+        System.out.println(xml);   
 
       }
 
