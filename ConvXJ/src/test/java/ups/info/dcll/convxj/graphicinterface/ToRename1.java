@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class ToRename 
+public class ToRename1 
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class ToRename
      *
      * @param testName name of the test case
      */
-    public ToRename( String testName )
+    public ToRename1( String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class ToRename
      */
     public static Test suite()
     {
-        return new TestSuite( ToRename.class );
+        return new TestSuite( ToRename1.class );
     }
 
     /**
