@@ -34,7 +34,7 @@ public class JsonToXml {
         XMLSerializer serializer = new XMLSerializer();
         JSON json = JSONSerializer.toJSON(jsonData); 
         serializer.setRootName("SampleJSON");
-        serializer.setTypeHintsEnabled(false);
+        serializer.setTypeHintsEnabled("root");
         String xml = serializer.write( json );  
         System.out.println(xml);   
       }
