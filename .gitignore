@@ -1,6 +1,10 @@
 .classpath
 .project
 .settings/
-target/
+
 *.jar
 *~
+
+*/target/*
+!*/target/site/
+!*/target/checkstyle.xml
