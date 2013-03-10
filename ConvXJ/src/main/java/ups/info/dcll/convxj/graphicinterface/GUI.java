@@ -15,6 +15,9 @@ public class GUI extends javax.swing.JFrame {
      */
     boolean xmlActive;
     boolean jsonActive;
+    String textXml, textJson;
+    String xmlPath, jsonPath;
+    
     public GUI() {
         initComponents();
         xmlActive = false;
@@ -33,8 +36,8 @@ public class GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         boutonImportXml = new javax.swing.JButton();
         boutonImportJson = new javax.swing.JButton();
-        xmlPath = new javax.swing.JTextField();
-        jsonPath = new javax.swing.JTextField();
+        fieldXmlPath = new javax.swing.JTextField();
+        fieldJsonPath = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaJson = new javax.swing.JTextArea();
@@ -51,9 +54,9 @@ public class GUI extends javax.swing.JFrame {
 
         boutonImportJson.setText("import JSON");
 
-        xmlPath.setText("C:/");
+        fieldXmlPath.setText("C:/");
 
-        jsonPath.setText("C:/");
+        fieldJsonPath.setText("C:/");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -63,11 +66,11 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(boutonImportXml)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(xmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(boutonImportJson)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -79,8 +82,8 @@ public class GUI extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonImportJson)
-                    .addComponent(xmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(boutonImportXml, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -238,14 +241,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton boutonImportJson;
     private javax.swing.JButton boutonImportXml;
     private javax.swing.JButton boutonSave;
+    private javax.swing.JTextField fieldJsonPath;
+    private javax.swing.JTextField fieldXmlPath;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jsonPath;
     private javax.swing.JTextArea textAreaJson;
     private javax.swing.JTextArea textAreaXml;
-    private javax.swing.JTextField xmlPath;
     // End of variables declaration//GEN-END:variables
 }
