@@ -27,7 +27,7 @@ public class TestJsonToXml {
 	public void setUp() throws Exception {
 		textJSON = "";
 		urlEnd = "";
-		jtx = new JsonToXml(textJSON);
+		jtx = new JsonToXml();
 	}
 
 	@After
