@@ -96,11 +96,11 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(boutonImportXml)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(boutonImportJson)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -109,15 +109,12 @@ public class GUI extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(boutonImportJson)
-                        .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(boutonImportXml, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(boutonImportJson)
+                    .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boutonImportXml, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {boutonImportJson, boutonImportXml});
@@ -229,6 +226,8 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
+        xmlActive = false;
+        jsonActive = true;
         textXml = textAreaXml.getText();
         boutonSave.setEnabled(true);
         textJson = new XmlToJson().convert(textXml);
@@ -241,6 +240,8 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
+        jsonActive = false;
+        xmlActive = true;
         textJson = textAreaJson.getText();
         boutonSave.setEnabled(true);
         textXml = new JsonToXml().convert(textJson);
@@ -253,8 +254,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
         // TODO add your handling code here:
-        xmlActive = false;
-        jsonActive = true;
+
         
         CustomFileChooser xmlFileChooser = new CustomFileChooser("xml", "Choisir un fichier XML à importer");
         
@@ -274,8 +274,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void boutonImportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportJsonActionPerformed
         // TODO add your handling code here:
-        jsonActive = true;
-        xmlActive = false;
+
         
         CustomFileChooser jsonFileChooser = new CustomFileChooser("json", "Choisir un fichier JSON à importer");
         
@@ -300,20 +299,20 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     	
         if(jsonActive) {
-        	CustomFileChooser jsonFileChooser = new CustomFileChooser("xml", "Choisir un nom de fichier XML pour la sauvegarde");
+        	CustomFileChooser jsonFileChooser = new CustomFileChooser("json", "Choisir un nom de fichier JSON pour la sauvegarde");
         	jsonFileChooser.showSaveDialog(this);
         	if(jsonFileChooser.getSelectedFile() != null) {
         		xmlPath = jsonFileChooser.getSelectedFile().getAbsolutePath();
-        		Saver.save(xmlPath+".xml", textXml);
+        		Saver.save(xmlPath+".json", textXml);
         	}
         }
         
         else {
-        	CustomFileChooser xmlFileChooser = new CustomFileChooser("json", "Choisir un nom de fichier JSON pour la sauvegarde");
+        	CustomFileChooser xmlFileChooser = new CustomFileChooser("xml", "Choisir un nom de fichier XML pour la sauvegarde");
         	xmlFileChooser.showSaveDialog(this);
         	if(xmlFileChooser.getSelectedFile() != null) {	
             	jsonPath = xmlFileChooser.getSelectedFile().getAbsolutePath();
-            	Saver.save(jsonPath+".json", textJson);
+            	Saver.save(jsonPath+".xml", textJson);
         	}
         }
     }//GEN-LAST:event_boutonSaveActionPerformed
