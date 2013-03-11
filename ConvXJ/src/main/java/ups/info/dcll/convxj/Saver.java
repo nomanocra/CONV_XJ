@@ -13,7 +13,7 @@ public class Saver {
     /**
      * Enregistre le texte en xml dans un fichier
      *
-     * @param path le path où stocker le fichier
+     * @param url le url où stocker le fichier
      * @param content
      *            contient le text à écrire dans le fichier
      * @return return true si tout c'est bien passé
