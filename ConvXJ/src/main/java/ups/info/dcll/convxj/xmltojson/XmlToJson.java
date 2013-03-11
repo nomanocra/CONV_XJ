@@ -36,6 +36,7 @@ public class XmlToJson {
         System.out.println(json.toString(2));
         return json.toString(2);
     }
+    
 
     /**
      * @param XML_FILE exemple de fichier xml, pour faire le teste
