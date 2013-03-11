@@ -7,21 +7,32 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.StringTokenizer;
-
-public class Saver {
+/**
+ *
+ * @author Legrand Mathieu
+ * @author Mercier Guillaume
+ * @author David Duprat
+ *
+ */
+final class Saver {
 
     /**
-     * Enregistre le texte en xml dans un fichier
+     * Contructeur Saver.
+     */
+    private Saver() {
+
+    }
+    /**
+     * Enregistre le texte en xml dans un fichier.
      *
-     * @param url le url où stocker le fichier
+     * @param path
+     *            le path où stocker le fichier
      * @param content
      *            contient le text à écrire dans le fichier
-     * @return return true si tout c'est bien passé
-     * lève une exception sinon
+     * @return return true si tout c'est bien passé lève une exception sinon
      */
- 
-    
-    public static boolean save(final String path, final String content) {        
+
+    public static boolean save(final String path, final String content) {
         try {
             FileWriter fw = new FileWriter(path, false);
             BufferedWriter bf = new BufferedWriter(fw);
@@ -32,13 +43,12 @@ public class Saver {
             System.out.println("ERREUR : " + io);
         }
 
-        System.out.println("Le fichier a été sauvegardé à l'adresse : "
-                + path);
+        System.out.println("Le fichier a été sauvegardé à l'adresse : " + path);
         return true;
     }
 
     /**
-     * Modifie l'extension du fichier de .xml a .json
+     * Modifie l'extension du fichier de .xml a .json.
      *
      * @param path
      *            path du fichier parsé
@@ -46,7 +56,7 @@ public class Saver {
      *            extention du fichier à enregistrer
      * @return le path du fichier avec le même nom et la nouvelle extension
      */
-    public static String makePath(final String path, final  String newExt) {
+    public static String makePath(final String path, final String newExt) {
 
         StringTokenizer st = new StringTokenizer(path, ".");
         String newUrl = "";
@@ -61,23 +71,29 @@ public class Saver {
         return newUrl;
 
     }
-    
+
+    /**
+     *
+     * @param path le path du fichier à lire
+     * @return le contenu du fichier
+     */
     public static String load(final String path) {
-    	String content = null;
-    	try {
-    		BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
-    		StringWriter out = new StringWriter();
-    		int b;
-    		while ((b=in.read()) != -1)
-    			out.write(b);
-    		out.flush();
-    		out.close();
-    		in.close();
-    		content = new String(out.toString());
-    	}
-    	catch (IOException ie) {
-    	         ie.printStackTrace(); 
-    	}
-		return content;
+        String content = null;
+        try {
+            BufferedInputStream in = new BufferedInputStream(
+                    new FileInputStream(path));
+            StringWriter out = new StringWriter();
+            int b;
+            while ((b = in.read()) != -1) {
+                out.write(b);
+            }
+            out.flush();
+            out.close();
+            in.close();
+            content = new String(out.toString());
+        } catch (IOException ie) {
+            ie.printStackTrace();
+        }
+        return content;
     }
 }
