@@ -21,10 +21,9 @@ public class Saver {
      */
  
     
-    public static boolean save(final String path, final String content) {
-        String newUrl = makePath(path, "xml");
+    public static boolean save(final String path, final String content) {        
         try {
-            FileWriter fw = new FileWriter(newUrl, false);
+            FileWriter fw = new FileWriter(path, false);
             BufferedWriter bf = new BufferedWriter(fw);
             bf.write(content);
             bf.flush();
@@ -34,7 +33,7 @@ public class Saver {
         }
 
         System.out.println("Le fichier a été sauvegardé à l'adresse : "
-                + newUrl);
+                + path);
         return true;
     }
 

@@ -16,7 +16,9 @@ import ups.info.dcll.convxj.xmltojson.XmlToJson;
 
 /**
  *
- * @author David
+ * @author David Duuprat
+ * @author Alexis Paoleschi
+ * 
  */
 public class GUI extends javax.swing.JFrame {
 
@@ -222,7 +224,7 @@ public class GUI extends javax.swing.JFrame {
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
         textXml = textAreaXml.getText();
         boutonSave.setEnabled(true);
-        textJson = new XmlToJson(textXml).convert();
+        textJson = new XmlToJson().convert(textXml);
         textAreaJson.setText(textJson);
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
