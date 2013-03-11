@@ -37,11 +37,12 @@ public class TestJsonToXml {
 	@Test
 	public void testConvert() {
 		
-//		String textXML = jtx.convert();
-//		XmlToJson xTj=new XmlToJson();
-//        String textJ = xTj.convert();
-//        
-//		assertEquals(textXML, textJ);
+		String textXML = jtx.convert();
+		XmlToJson xTj=new XmlToJson();
+        String textJ = xTj.convert();        
+        JsonToXml testjTx = new JsonToXml(textJ);
+        
+		assertEquals(textXML, testjTx.convert());
 	}	
 
 }
