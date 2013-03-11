@@ -26,7 +26,7 @@
 <a class="jxr_linenumber" name="16" href="#16">16</a>  
 <a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment"> *</em>
-<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * @author David Duuprat</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * @author David Duprat</em>
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment"> * @author Alexis Paoleschi</em>
 <a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_javadoccomment"> * </em>
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <em class="jxr_javadoccomment"> */</em>
@@ -242,7 +242,7 @@
 <a class="jxr_linenumber" name="232" href="#232">232</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {<em class="jxr_comment">//GEN-FIRST:event_boutonConvJXActionPerformed</em>
 <a class="jxr_linenumber" name="233" href="#233">233</a>         textJson = textAreaJson.getText();
 <a class="jxr_linenumber" name="234" href="#234">234</a>         boutonSave.setEnabled(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="235" href="#235">235</a>         textXml = <strong class="jxr_keyword">new</strong> <a href="../../../../../ups/info/dcll/convxj/jsontoxml/JsonToXml.html">JsonToXml</a>(textJson).convert();
+<a class="jxr_linenumber" name="235" href="#235">235</a>         textXml = <strong class="jxr_keyword">new</strong> <a href="../../../../../ups/info/dcll/convxj/jsontoxml/JsonToXml.html">JsonToXml</a>().convert(textJson);
 <a class="jxr_linenumber" name="236" href="#236">236</a>         textAreaXml.setText(textXml);
 <a class="jxr_linenumber" name="237" href="#237">237</a>     }<em class="jxr_comment">//GEN-LAST:event_boutonConvJXActionPerformed</em>
 <a class="jxr_linenumber" name="238" href="#238">238</a> 
