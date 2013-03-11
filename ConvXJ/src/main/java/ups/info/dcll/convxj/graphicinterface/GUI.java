@@ -7,11 +7,18 @@ package ups.info.dcll.convxj.graphicinterface;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JFileChooser;
+
 import ups.info.dcll.convxj.Saver;
+import ups.info.dcll.convxj.jsontoxml.JsonToXml;
+import ups.info.dcll.convxj.xmltojson.XmlToJson;
 
 /**
  *
- * @author David
+ * @author David Duuprat
+ * @author Alexis Paoleschi
+ * 
  */
 public class GUI extends javax.swing.JFrame {
 
@@ -215,15 +222,18 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
-
+        textXml = textAreaXml.getText();
         boutonSave.setEnabled(true);
-        
+        textJson = new XmlToJson().convert(textXml);
+        textAreaJson.setText(textJson);
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
-
+        textJson = textAreaJson.getText();
         boutonSave.setEnabled(true);
+        textXml = new JsonToXml(textJson).convert();
+        textAreaXml.setText(textXml);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
@@ -231,12 +241,17 @@ public class GUI extends javax.swing.JFrame {
         xmlActive = false;
         jsonActive = true;
         
-        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
-        jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
+        JFileChooser fc = new JFileChooser();
         
-        textXml = Saver.load(xmlPath);
-        fieldXmlPath.setText(xmlPath);
-        textAreaXml.setText(textXml);
+        fc.showOpenDialog(this);
+        
+        if(fc.getSelectedFile() != null) {      	
+        	xmlPath = fc.getSelectedFile().getAbsolutePath();  
+        
+	        textXml = Saver.load(xmlPath);
+	        fieldXmlPath.setText(xmlPath);
+	        textAreaXml.setText(textXml);
+        }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
 
     private void boutonImportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportJsonActionPerformed
@@ -244,12 +259,17 @@ public class GUI extends javax.swing.JFrame {
         jsonActive = true;
         xmlActive = false;
         
-        jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
-        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
+        JFileChooser fc = new JFileChooser();
         
-        textJson = Saver.load(jsonPath);
-        fieldJsonPath.setText(jsonPath); 
-        textAreaJson.setText(textJson);
+        fc.showOpenDialog(this);
+        
+        if(fc.getSelectedFile() != null) {	
+        	jsonPath = fc.getSelectedFile().getAbsolutePath();    
+        
+	        textJson = Saver.load(jsonPath);
+	        fieldJsonPath.setText(jsonPath); 
+	        textAreaJson.setText(textJson);
+        }
         
     }//GEN-LAST:event_boutonImportJsonActionPerformed
 
@@ -257,11 +277,22 @@ public class GUI extends javax.swing.JFrame {
     
     private void boutonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonSaveActionPerformed
         // TODO add your handling code here:
+
+    	JFileChooser fc = new JFileChooser();
+        
+        fc.showSaveDialog(this);
+    	
         if(jsonActive){
-            Saver.save(xmlPath, textXml);
+        	if(fc.getSelectedFile() != null) {
+        		xmlPath = fc.getSelectedFile().getAbsolutePath();
+        		Saver.save(xmlPath, textXml);
+        	}
         }
         else{
-            Saver.save(jsonPath,textJson);
+        	if(fc.getSelectedFile() != null) {	
+            	jsonPath = fc.getSelectedFile().getAbsolutePath();
+            	Saver.save(jsonPath,textJson);
+        	}
         }
     }//GEN-LAST:event_boutonSaveActionPerformed
 
