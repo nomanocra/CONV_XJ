@@ -1,19 +1,14 @@
 package ups.info.dcll.convxj.jsontoxml;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import net.sf.json.JSON;
 import net.sf.json.JSONSerializer;
 import net.sf.json.xml.XMLSerializer;
-
-import org.apache.commons.io.IOUtils;
 
 /**
  *
  * @author Legrand Mathieu
  * @author Mercier Guillaume
- * 
+ *
  */
 
 // Inspiré de
@@ -21,17 +16,33 @@ import org.apache.commons.io.IOUtils;
 
 public class JsonToXml {
 
-	public void convert() throws IOException {
-		InputStream is = JsonToXml.class.getResourceAsStream("moodle.json");
-		String jsonData = IOUtils.toString(is);
+    /**
+     * @param textJson contient le JSON à parser
+     */
+    private String textJson;
 
-		XMLSerializer serializer = new XMLSerializer();
-		JSON json = JSONSerializer.toJSON(jsonData);
+    /**
+     *
+     * @param json le json à parser
+     */
+    public JsonToXml(final String json) {
+        this.textJson = json;
+    }
 
-		serializer.setRootName("Root");
+    /**
+     *
+     * @return un String contenant du xml
+     */
+    public final String convert() {
+        XMLSerializer serializer = new XMLSerializer();
+        JSON json = JSONSerializer.toJSON(textJson);
+
         serializer.setTypeHintsEnabled(false);
-        String xml = serializer.write( json );  
-        System.out.println(xml);
-	}
+        serializer.setRootName("root");
+        serializer.setTypeHintsEnabled(false);
+
+        String xml = serializer.write(json);
+        return xml;
+    }
 
 }
