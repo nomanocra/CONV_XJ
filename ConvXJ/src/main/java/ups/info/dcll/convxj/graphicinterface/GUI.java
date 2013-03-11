@@ -8,9 +8,7 @@ import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.swing.JFileChooser;
-
 import ups.info.dcll.convxj.Saver;
 import ups.info.dcll.convxj.jsontoxml.JsonToXml;
 import ups.info.dcll.convxj.xmltojson.XmlToJson;
@@ -32,13 +30,14 @@ public class GUI extends javax.swing.JFrame {
     String textXml, textJson;
     String xmlPath, jsonPath;  
     
-    Color backGroundText;
+    Color backGroundText, borderColor;
     
     public GUI() throws FileNotFoundException {
         initComponents();
         xmlActive = false;
         jsonActive = false; 
         backGroundText = new java.awt.Color(248, 248, 248);
+        borderColor = new java.awt.Color(102, 102, 255);
     }
 
     /**
@@ -126,6 +125,7 @@ public class GUI extends javax.swing.JFrame {
         textAreaJson.setBackground(new java.awt.Color(249, 249, 249));
         textAreaJson.setColumns(20);
         textAreaJson.setRows(5);
+        textAreaJson.setBorder(null);
         jScrollPane1.setViewportView(textAreaJson);
 
         textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
@@ -141,6 +141,7 @@ public class GUI extends javax.swing.JFrame {
         });
 
         boutonConvJX.setText("XML <- JSON");
+        boutonConvJX.setBorder(null);
         boutonConvJX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boutonConvJXActionPerformed(evt);
@@ -233,7 +234,9 @@ public class GUI extends javax.swing.JFrame {
         textJson = new XmlToJson().convert(textXml);
         textAreaJson.setText(textJson);
         textAreaXml.setBackground(backGroundText);
+        textAreaXml.setBorder(null);
         textAreaJson.setBackground(Color.white);
+        textAreaJson.setBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2));
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
@@ -243,7 +246,9 @@ public class GUI extends javax.swing.JFrame {
         textXml = new JsonToXml().convert(textJson);
         textAreaXml.setText(textXml);
         textAreaXml.setBackground(Color.white);
+        textAreaXml.setBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2));
         textAreaJson.setBackground(backGroundText);
+        textAreaJson.setBorder(null);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
@@ -262,6 +267,7 @@ public class GUI extends javax.swing.JFrame {
 	        fieldXmlPath.setText(xmlPath);
 	        textAreaXml.setText(textXml);
                 textAreaXml.setBackground(backGroundText);
+                textAreaXml.setBorder(null);       
                 textAreaJson.setBackground(Color.white);
         }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
@@ -282,6 +288,7 @@ public class GUI extends javax.swing.JFrame {
 	        fieldJsonPath.setText(jsonPath); 
 	        textAreaJson.setText(textJson);
                 textAreaJson.setBackground(backGroundText);
+                textAreaJson.setBorder(null);
                 textAreaXml.setBackground(Color.white);
         }
         
