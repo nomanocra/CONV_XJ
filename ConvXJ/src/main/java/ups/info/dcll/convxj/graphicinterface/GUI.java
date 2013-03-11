@@ -16,7 +16,9 @@ import ups.info.dcll.convxj.xmltojson.XmlToJson;
 
 /**
  *
- * @author David
+ * @author David Duuprat
+ * @author Alexis Paoleschi
+ * 
  */
 public class GUI extends javax.swing.JFrame {
 

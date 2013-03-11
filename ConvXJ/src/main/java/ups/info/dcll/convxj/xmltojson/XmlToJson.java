@@ -13,10 +13,8 @@ public class XmlToJson {
 
 	/**
      * @param textXml contient le XML à parser
-     * @param xmlSerializer est le parser
      */
     private String textXml;
-    private XMLSerializer xmlSerializer;
 
     /**
      *
@@ -24,21 +22,18 @@ public class XmlToJson {
      */
     public XmlToJson(final String xml) {
         this.textXml = xml;
-        this.xmlSerializer = new XMLSerializer();
-    }
-	
-    public XmlToJson() {
-        xmlSerializer = new XMLSerializer();
     }
     
     //fonction qui prend qui convertie le fichier XML_FILE en json, et l'affiche
     //à l'écran (pour l'instant on l'utilise pour le debug)
     public String convert() {
+    	XMLSerializer xmlSerializer = new XMLSerializer();
         JSON json = xmlSerializer.read(textXml);
         System.out.println(json.toString(2));
         return json.toString(2);
     }
-        //exemple de fichier xml, pour faire le teste
+    
+    //exemple de fichier xml, pour faire le test
     public static final String XML_FILE = "<?xml version=\"1.0\" "
             + "encoding=\"UTF-8\"?>\n"
             + "<films>\n"
