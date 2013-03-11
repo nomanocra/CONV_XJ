@@ -55,9 +55,9 @@ public class GUI extends javax.swing.JFrame {
         fieldXmlPath = new javax.swing.JTextField();
         fieldJsonPath = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollJson = new javax.swing.JScrollPane();
         textAreaJson = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollXml = new javax.swing.JScrollPane();
         textAreaXml = new javax.swing.JTextArea();
         boutonConvXJ = new javax.swing.JButton();
         boutonConvJX = new javax.swing.JButton();
@@ -126,12 +126,12 @@ public class GUI extends javax.swing.JFrame {
         textAreaJson.setColumns(20);
         textAreaJson.setRows(5);
         textAreaJson.setBorder(null);
-        jScrollPane1.setViewportView(textAreaJson);
+        jScrollJson.setViewportView(textAreaJson);
 
         textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
         textAreaXml.setColumns(20);
         textAreaXml.setRows(5);
-        jScrollPane2.setViewportView(textAreaXml);
+        jScrollXml.setViewportView(textAreaXml);
 
         boutonConvXJ.setText("XML -> JSON");
         boutonConvXJ.addActionListener(new java.awt.event.ActionListener() {
@@ -154,13 +154,13 @@ public class GUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
+                .addComponent(jScrollXml, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(boutonConvJX, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                     .addComponent(boutonConvXJ, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(jScrollJson, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -177,8 +177,8 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2))
+                    .addComponent(jScrollJson)
+                    .addComponent(jScrollXml))
                 .addContainerGap())
         );
 
@@ -234,9 +234,9 @@ public class GUI extends javax.swing.JFrame {
         textJson = new XmlToJson().convert(textXml);
         textAreaJson.setText(textJson);
         textAreaXml.setBackground(backGroundText);
-        textAreaXml.setBorder(null);
+        jScrollXml.setBorder(null);
         textAreaJson.setBackground(Color.white);
-        textAreaJson.setBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2));
+        jScrollJson.setBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2));
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
@@ -246,9 +246,9 @@ public class GUI extends javax.swing.JFrame {
         textXml = new JsonToXml().convert(textJson);
         textAreaXml.setText(textXml);
         textAreaXml.setBackground(Color.white);
-        textAreaXml.setBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2));
+        jScrollXml.setBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2));
         textAreaJson.setBackground(backGroundText);
-        textAreaJson.setBorder(null);
+        jScrollJson.setBorder(null);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
@@ -267,7 +267,7 @@ public class GUI extends javax.swing.JFrame {
 	        fieldXmlPath.setText(xmlPath);
 	        textAreaXml.setText(textXml);
                 textAreaXml.setBackground(backGroundText);
-                textAreaXml.setBorder(null);       
+                jScrollXml.setBorder(null);       
                 textAreaJson.setBackground(Color.white);
         }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
@@ -288,7 +288,7 @@ public class GUI extends javax.swing.JFrame {
 	        fieldJsonPath.setText(jsonPath); 
 	        textAreaJson.setText(textJson);
                 textAreaJson.setBackground(backGroundText);
-                textAreaJson.setBorder(null);
+                jScrollJson.setBorder(null);
                 textAreaXml.setBackground(Color.white);
         }
         
@@ -366,8 +366,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollJson;
+    private javax.swing.JScrollPane jScrollXml;
     private javax.swing.JTextArea textAreaJson;
     private javax.swing.JTextArea textAreaXml;
     // End of variables declaration//GEN-END:variables
