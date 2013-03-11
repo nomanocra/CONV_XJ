@@ -11,6 +11,8 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
 import ups.info.dcll.convxj.Saver;
+import ups.info.dcll.convxj.jsontoxml.JsonToXml;
+import ups.info.dcll.convxj.xmltojson.XmlToJson;
 
 /**
  *
@@ -218,15 +220,18 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
-
+        textXml = textAreaXml.getText();
         boutonSave.setEnabled(true);
-        
+        textJson = new XmlToJson(textXml).convert();
+        textAreaJson.setText(textJson);
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
-
+        textJson = textAreaJson.getText();
         boutonSave.setEnabled(true);
+        textXml = new JsonToXml(textJson).convert();
+        textAreaXml.setText(textXml);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
