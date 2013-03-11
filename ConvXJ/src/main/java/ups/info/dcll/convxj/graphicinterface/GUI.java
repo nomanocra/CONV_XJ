@@ -7,6 +7,9 @@ package ups.info.dcll.convxj.graphicinterface;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JFileChooser;
+
 import ups.info.dcll.convxj.Saver;
 
 /**
@@ -231,11 +234,17 @@ public class GUI extends javax.swing.JFrame {
         xmlActive = false;
         jsonActive = true;
         
-        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";      
+        JFileChooser fc = new JFileChooser();
         
-        textXml = Saver.load(xmlPath);
-        fieldXmlPath.setText(xmlPath);
-        textAreaXml.setText(textXml);
+        fc.showOpenDialog(this);
+        
+        if(fc.getSelectedFile() != null) {      	
+        	xmlPath = fc.getSelectedFile().getAbsolutePath();  
+        
+	        textXml = Saver.load(xmlPath);
+	        fieldXmlPath.setText(xmlPath);
+	        textAreaXml.setText(textXml);
+        }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
 
     private void boutonImportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportJsonActionPerformed
@@ -243,11 +252,17 @@ public class GUI extends javax.swing.JFrame {
         jsonActive = true;
         xmlActive = false;
         
-        jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
+        JFileChooser fc = new JFileChooser();
         
-        textJson = Saver.load(jsonPath);
-        fieldJsonPath.setText(jsonPath); 
-        textAreaJson.setText(textJson);
+        fc.showOpenDialog(this);
+        
+        if(fc.getSelectedFile() != null) {	
+        	jsonPath = fc.getSelectedFile().getAbsolutePath();    
+        
+	        textJson = Saver.load(jsonPath);
+	        fieldJsonPath.setText(jsonPath); 
+	        textAreaJson.setText(textJson);
+        }
         
     }//GEN-LAST:event_boutonImportJsonActionPerformed
 
@@ -256,14 +271,21 @@ public class GUI extends javax.swing.JFrame {
     private void boutonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonSaveActionPerformed
         // TODO add your handling code here:
 
+    	JFileChooser fc = new JFileChooser();
+        
+        fc.showSaveDialog(this);
+    	
         if(jsonActive){
-            xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
-            Saver.save(xmlPath, textXml);
+        	if(fc.getSelectedFile() != null) {
+        		xmlPath = fc.getSelectedFile().getAbsolutePath();
+        		Saver.save(xmlPath, textXml);
+        	}
         }
         else{
-            
-            jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
-            Saver.save(jsonPath,textJson);
+        	if(fc.getSelectedFile() != null) {	
+            	jsonPath = fc.getSelectedFile().getAbsolutePath();
+            	Saver.save(jsonPath,textJson);
+        	}
         }
     }//GEN-LAST:event_boutonSaveActionPerformed
 
