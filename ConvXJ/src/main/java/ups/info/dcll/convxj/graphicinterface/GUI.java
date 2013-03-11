@@ -4,10 +4,10 @@
  */
 package ups.info.dcll.convxj.graphicinterface;
 
-
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import ups.info.dcll.convxj.Saver;
 
 /**
  *
@@ -70,8 +70,12 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        fieldXmlPath.setEditable(false);
+        fieldXmlPath.setBackground(new java.awt.Color(249, 249, 249));
         fieldXmlPath.setText("C:/");
 
+        fieldJsonPath.setEditable(false);
+        fieldJsonPath.setBackground(new java.awt.Color(247, 247, 247));
         fieldJsonPath.setText("C:/");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -166,6 +170,11 @@ public class GUI extends javax.swing.JFrame {
 
         boutonSave.setText("SaveAs");
         boutonSave.setEnabled(false);
+        boutonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boutonSaveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -221,17 +230,37 @@ public class GUI extends javax.swing.JFrame {
         jsonActive = true;
         xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
         jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
+        
+        textXml = Saver.load(xmlPath);
+        fieldXmlPath.setText(xmlPath);
+        textAreaXml.setText(textXml);
     }//GEN-LAST:event_boutonImportXmlActionPerformed
 
     private void boutonImportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportJsonActionPerformed
         // TODO add your handling code here:
-        jsonActive = false;
-        xmlActive = true;
+        jsonActive = true;
+        xmlActive = false;
         
         jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
         xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
         
+        textJson = Saver.load(jsonPath);
+        fieldJsonPath.setText(jsonPath); 
+        textAreaJson.setText(textJson);
+        
     }//GEN-LAST:event_boutonImportJsonActionPerformed
+
+    
+    
+    private void boutonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonSaveActionPerformed
+        // TODO add your handling code here:
+        if(jsonActive){
+            Saver.save(xmlPath, textXml);
+        }
+        else{
+            Saver.save(jsonPath,textJson);
+        }
+    }//GEN-LAST:event_boutonSaveActionPerformed
 
     /**
      * @param args the command line arguments
