@@ -32,10 +32,13 @@ public class GUI extends javax.swing.JFrame {
     String textXml, textJson;
     String xmlPath, jsonPath;  
     
+    Color backGroundText;
+    
     public GUI() throws FileNotFoundException {
         initComponents();
         xmlActive = false;
         jsonActive = false; 
+        backGroundText = new java.awt.Color(248, 248, 248);
     }
 
     /**
@@ -229,7 +232,7 @@ public class GUI extends javax.swing.JFrame {
         boutonSave.setEnabled(true);
         textJson = new XmlToJson().convert(textXml);
         textAreaJson.setText(textJson);
-        textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
+        textAreaXml.setBackground(backGroundText);
         textAreaJson.setBackground(Color.white);
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
@@ -240,7 +243,7 @@ public class GUI extends javax.swing.JFrame {
         textXml = new JsonToXml().convert(textJson);
         textAreaXml.setText(textXml);
         textAreaXml.setBackground(Color.white);
-        textAreaJson.setBackground(new java.awt.Color(249, 249, 249));
+        textAreaJson.setBackground(backGroundText);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
@@ -258,7 +261,7 @@ public class GUI extends javax.swing.JFrame {
 	        textXml = Saver.load(xmlPath);
 	        fieldXmlPath.setText(xmlPath);
 	        textAreaXml.setText(textXml);
-                textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
+                textAreaXml.setBackground(backGroundText);
                 textAreaJson.setBackground(Color.white);
         }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
@@ -278,7 +281,7 @@ public class GUI extends javax.swing.JFrame {
 	        textJson = Saver.load(jsonPath);
 	        fieldJsonPath.setText(jsonPath); 
 	        textAreaJson.setText(textJson);
-                textAreaJson.setBackground(new java.awt.Color(249, 249, 249));
+                textAreaJson.setBackground(backGroundText);
                 textAreaXml.setBackground(Color.white);
         }
         
