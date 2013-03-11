@@ -8,13 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2013</copyright>
     <item>
-<<<<<<< HEAD
       <title>File: 5,
-             Errors: 27,
-=======
-      <title>File: 4,
-             Errors: 179,
->>>>>>> dev/interface
+             Errors: 171,
              Warnings: 0,
              Infos: 0
       </title>
@@ -43,7 +38,7 @@
                   0
                 </td>
                 <td>
-                  4
+                  8
                 </td>
               </tr>
                           <tr>
@@ -57,7 +52,7 @@
                   0
                 </td>
                 <td>
-                  16
+                  11
                 </td>
               </tr>
                           <tr>
@@ -71,7 +66,7 @@
                   0
                 </td>
                 <td>
-                  140
+                  147
                 </td>
               </tr>
                           <tr>
@@ -99,11 +94,7 @@
                   0
                 </td>
                 <td>
-<<<<<<< HEAD
                   1
-=======
-                  15
->>>>>>> dev/interface
                 </td>
               </tr>
                       </tbody>
