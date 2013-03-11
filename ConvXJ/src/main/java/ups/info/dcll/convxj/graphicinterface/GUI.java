@@ -297,21 +297,22 @@ public class GUI extends javax.swing.JFrame {
     
     private void boutonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonSaveActionPerformed
         // TODO add your handling code here:
-
-    	JFileChooser fc = new JFileChooser();
-        
-        fc.showSaveDialog(this);
     	
-        if(jsonActive){
-        	if(fc.getSelectedFile() != null) {
-        		jsonPath = fc.getSelectedFile().getAbsolutePath();
-        		Saver.save(jsonPath, textJson);
+        if(jsonActive) {
+        	CustomFileChooser jsonFileChooser = new CustomFileChooser("json", "Choisir un nom de fichier JSON pour la sauvegarde");
+        	jsonFileChooser.showSaveDialog(this);
+        	if(jsonFileChooser.getSelectedFile() != null) {
+        		xmlPath = jsonFileChooser.getSelectedFile().getAbsolutePath();
+        		Saver.save(xmlPath+".json", textXml);
         	}
         }
-        else{
-        	if(fc.getSelectedFile() != null) {	
-            	xmlPath = fc.getSelectedFile().getAbsolutePath();
-            	Saver.save(xmlPath,textXml);
+        
+        else {
+        	CustomFileChooser xmlFileChooser = new CustomFileChooser("xml", "Choisir un nom de fichier XML pour la sauvegarde");
+        	xmlFileChooser.showSaveDialog(this);
+        	if(xmlFileChooser.getSelectedFile() != null) {	
+            	jsonPath = xmlFileChooser.getSelectedFile().getAbsolutePath();
+            	Saver.save(jsonPath+".xml", textJson);
         	}
         }
     }//GEN-LAST:event_boutonSaveActionPerformed
