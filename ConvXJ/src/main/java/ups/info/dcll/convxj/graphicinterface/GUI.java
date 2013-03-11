@@ -231,8 +231,7 @@ public class GUI extends javax.swing.JFrame {
         xmlActive = false;
         jsonActive = true;
         
-        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
-        jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
+        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";      
         
         textXml = Saver.load(xmlPath);
         fieldXmlPath.setText(xmlPath);
@@ -245,7 +244,6 @@ public class GUI extends javax.swing.JFrame {
         xmlActive = false;
         
         jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
-        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
         
         textJson = Saver.load(jsonPath);
         fieldJsonPath.setText(jsonPath); 
@@ -257,10 +255,14 @@ public class GUI extends javax.swing.JFrame {
     
     private void boutonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonSaveActionPerformed
         // TODO add your handling code here:
+
         if(jsonActive){
+            xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
             Saver.save(xmlPath, textXml);
         }
         else{
+            
+            jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
             Saver.save(jsonPath,textJson);
         }
     }//GEN-LAST:event_boutonSaveActionPerformed
