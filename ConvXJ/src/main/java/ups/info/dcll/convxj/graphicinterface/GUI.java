@@ -4,6 +4,7 @@
  */
 package ups.info.dcll.convxj.graphicinterface;
 
+import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -119,10 +120,12 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {boutonImportJson, boutonImportXml});
 
+        textAreaJson.setBackground(new java.awt.Color(249, 249, 249));
         textAreaJson.setColumns(20);
         textAreaJson.setRows(5);
         jScrollPane1.setViewportView(textAreaJson);
 
+        textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
         textAreaXml.setColumns(20);
         textAreaXml.setRows(5);
         jScrollPane2.setViewportView(textAreaXml);
@@ -226,6 +229,8 @@ public class GUI extends javax.swing.JFrame {
         boutonSave.setEnabled(true);
         textJson = new XmlToJson().convert(textXml);
         textAreaJson.setText(textJson);
+        textAreaXml.setBackground(Color.gray);
+        textAreaJson.setBackground(Color.white);
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
@@ -234,6 +239,8 @@ public class GUI extends javax.swing.JFrame {
         boutonSave.setEnabled(true);
         textXml = new JsonToXml().convert(textJson);
         textAreaXml.setText(textXml);
+        textAreaXml.setBackground(Color.white);
+        textAreaJson.setBackground(Color.gray);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
@@ -251,6 +258,8 @@ public class GUI extends javax.swing.JFrame {
 	        textXml = Saver.load(xmlPath);
 	        fieldXmlPath.setText(xmlPath);
 	        textAreaXml.setText(textXml);
+                textAreaXml.setBackground(Color.gray);
+                textAreaJson.setBackground(Color.white);
         }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
 
@@ -269,6 +278,8 @@ public class GUI extends javax.swing.JFrame {
 	        textJson = Saver.load(jsonPath);
 	        fieldJsonPath.setText(jsonPath); 
 	        textAreaJson.setText(textJson);
+                textAreaJson.setBackground(Color.gray);
+                textAreaXml.setBackground(Color.white);
         }
         
     }//GEN-LAST:event_boutonImportJsonActionPerformed
