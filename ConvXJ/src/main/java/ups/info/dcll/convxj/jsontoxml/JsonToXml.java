@@ -10,10 +10,8 @@ import net.sf.json.xml.XMLSerializer;
  * @author Mercier Guillaume
  *
  */
-
 // Inspiré de
 // http://answers.oreilly.com/topic/279-how-to-convert-json-to-xml-in-java
-
 public class JsonToXml {
 
     /**
@@ -22,17 +20,18 @@ public class JsonToXml {
     private XMLSerializer serializer = new XMLSerializer();
 
     /**
-     * constructeur
+     * constructeur.
      */
     public JsonToXml() {
-    	serializer = new XMLSerializer();
+        serializer = new XMLSerializer();
     }
 
     /**
      *
+     * @param textJson le contenu du fichier json à convertir.
      * @return un String contenant du xml
      */
-    public final String convert(String textJson) {
+    public final String convert(final String textJson) {
         JSON json = JSONSerializer.toJSON(textJson);
 
         serializer.setTypeHintsEnabled(false);
@@ -42,5 +41,4 @@ public class JsonToXml {
         String xml = serializer.write(json);
         return xml;
     }
-
 }
