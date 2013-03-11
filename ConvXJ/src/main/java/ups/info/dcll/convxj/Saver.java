@@ -19,9 +19,7 @@ public class Saver {
      * @return return true si tout c'est bien passé
      * lève une exception sinon
      */
-    public static String load(final String path){
-        return "";
-    }
+ 
     
     public static boolean save(final String path, final String content) {
         String newUrl = makePath(path, "xml");

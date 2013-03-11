@@ -217,6 +217,8 @@ public class GUI extends javax.swing.JFrame {
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
 
         boutonSave.setEnabled(true);
+        
+        
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
@@ -228,6 +230,7 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         xmlActive = false;
         jsonActive = true;
+        
         xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
         jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
         
