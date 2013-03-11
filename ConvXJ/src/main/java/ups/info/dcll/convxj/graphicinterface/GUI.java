@@ -229,7 +229,7 @@ public class GUI extends javax.swing.JFrame {
         boutonSave.setEnabled(true);
         textJson = new XmlToJson().convert(textXml);
         textAreaJson.setText(textJson);
-        textAreaXml.setBackground(Color.gray);
+        textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
         textAreaJson.setBackground(Color.white);
         
     }//GEN-LAST:event_boutonConvXJActionPerformed
@@ -240,7 +240,7 @@ public class GUI extends javax.swing.JFrame {
         textXml = new JsonToXml().convert(textJson);
         textAreaXml.setText(textXml);
         textAreaXml.setBackground(Color.white);
-        textAreaJson.setBackground(Color.gray);
+        textAreaJson.setBackground(new java.awt.Color(249, 249, 249));
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
@@ -258,7 +258,7 @@ public class GUI extends javax.swing.JFrame {
 	        textXml = Saver.load(xmlPath);
 	        fieldXmlPath.setText(xmlPath);
 	        textAreaXml.setText(textXml);
-                textAreaXml.setBackground(Color.gray);
+                textAreaXml.setBackground(new java.awt.Color(249, 249, 249));
                 textAreaJson.setBackground(Color.white);
         }
     }//GEN-LAST:event_boutonImportXmlActionPerformed
@@ -278,7 +278,7 @@ public class GUI extends javax.swing.JFrame {
 	        textJson = Saver.load(jsonPath);
 	        fieldJsonPath.setText(jsonPath); 
 	        textAreaJson.setText(textJson);
-                textAreaJson.setBackground(Color.gray);
+                textAreaJson.setBackground(new java.awt.Color(249, 249, 249));
                 textAreaXml.setBackground(Color.white);
         }
         
