@@ -14,7 +14,7 @@ import java.util.StringTokenizer;
  * @author David Duprat
  *
  */
-final class Saver {
+public final class Saver {
 
     /**
      * Contructeur Saver.
