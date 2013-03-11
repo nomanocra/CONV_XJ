@@ -226,6 +226,8 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
+        xmlActive = false;
+        jsonActive = true;
         textXml = textAreaXml.getText();
         boutonSave.setEnabled(true);
         textJson = new XmlToJson().convert(textXml);
@@ -238,6 +240,8 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
+        jsonActive = false;
+        xmlActive = true;
         textJson = textAreaJson.getText();
         boutonSave.setEnabled(true);
         textXml = new JsonToXml().convert(textJson);
@@ -250,8 +254,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
         // TODO add your handling code here:
-        xmlActive = false;
-        jsonActive = true;
+
         
         CustomFileChooser xmlFileChooser = new CustomFileChooser("xml", "Choisir un fichier XML à importer");
         
@@ -271,8 +274,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void boutonImportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportJsonActionPerformed
         // TODO add your handling code here:
-        jsonActive = true;
-        xmlActive = false;
+
         
         CustomFileChooser jsonFileChooser = new CustomFileChooser("json", "Choisir un fichier JSON à importer");
         
@@ -302,14 +304,14 @@ public class GUI extends javax.swing.JFrame {
     	
         if(jsonActive){
         	if(fc.getSelectedFile() != null) {
-        		xmlPath = fc.getSelectedFile().getAbsolutePath();
-        		Saver.save(xmlPath, textXml);
+        		jsonPath = fc.getSelectedFile().getAbsolutePath();
+        		Saver.save(jsonPath, textJson);
         	}
         }
         else{
         	if(fc.getSelectedFile() != null) {	
-            	jsonPath = fc.getSelectedFile().getAbsolutePath();
-            	Saver.save(jsonPath,textJson);
+            	xmlPath = fc.getSelectedFile().getAbsolutePath();
+            	Saver.save(xmlPath,textXml);
         	}
         }
     }//GEN-LAST:event_boutonSaveActionPerformed
