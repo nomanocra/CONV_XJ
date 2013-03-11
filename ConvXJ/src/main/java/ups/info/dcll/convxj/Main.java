@@ -8,13 +8,21 @@ import ups.info.dcll.convxj.jsontoxml.JsonToXml;
  */
 public class Main {
 
-    public static void main(String[] args) throws Exception {
-        XmlToJson xTj=new XmlToJson();
+    public static void main(String[] args) {
+        XmlToJson xTj = new XmlToJson();
         xTj.convert();
 
-//        String textJSON = null ;
-//        String url = null ;
-//        JsonToXml jTx = new JsonToXml(textJSON, url); 
-//        jTx.convert();
+        String url = "moodle.json";
+        String newurl = Saver.makeUrl(url, "xml");
+        String textJSON = xTj.convert();
+
+        JsonToXml jTx = new JsonToXml(textJSON);
+
+        String xml = jTx.convert();
+
+        System.out.println(textJSON);
+        System.out.println(xml);
+
+        Saver.save(newurl, xml);
     }
 }
