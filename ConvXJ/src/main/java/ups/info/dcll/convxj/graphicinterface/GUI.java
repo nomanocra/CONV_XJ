@@ -253,12 +253,12 @@ public class GUI extends javax.swing.JFrame {
         xmlActive = false;
         jsonActive = true;
         
-        JFileChooser fc = new JFileChooser();
+        CustomFileChooser xmlFileChooser = new CustomFileChooser("xml", "Choisir un fichier XML à importer");
         
-        fc.showOpenDialog(this);
+        xmlFileChooser.showOpenDialog(this);
         
-        if(fc.getSelectedFile() != null) {      	
-        	xmlPath = fc.getSelectedFile().getAbsolutePath();  
+        if(xmlFileChooser.getSelectedFile() != null) {	
+        	xmlPath = xmlFileChooser.getSelectedFile().getAbsolutePath();      
         
 	        textXml = Saver.load(xmlPath);
 	        fieldXmlPath.setText(xmlPath);
@@ -274,12 +274,12 @@ public class GUI extends javax.swing.JFrame {
         jsonActive = true;
         xmlActive = false;
         
-        JFileChooser fc = new JFileChooser();
+        CustomFileChooser jsonFileChooser = new CustomFileChooser("json", "Choisir un fichier JSON à importer");
         
-        fc.showOpenDialog(this);
+        jsonFileChooser.showOpenDialog(this);
         
-        if(fc.getSelectedFile() != null) {	
-        	jsonPath = fc.getSelectedFile().getAbsolutePath();    
+        if(jsonFileChooser.getSelectedFile() != null) {	
+        	jsonPath = jsonFileChooser.getSelectedFile().getAbsolutePath();    
         
 	        textJson = Saver.load(jsonPath);
 	        fieldJsonPath.setText(jsonPath); 
