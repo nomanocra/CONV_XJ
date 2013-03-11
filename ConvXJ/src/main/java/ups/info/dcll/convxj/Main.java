@@ -13,6 +13,9 @@ public class Main {
 
 
     public static void main(String[] args) throws FileNotFoundException {
+        String s="text.xml";
+        String ext = s.substring(s.lastIndexOf("."));
+        System.out.println(ext);
 		GUI gui = new GUI();
 		gui.setVisible(true);
     }

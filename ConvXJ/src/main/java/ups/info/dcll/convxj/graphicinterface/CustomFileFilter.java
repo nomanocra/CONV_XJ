@@ -12,10 +12,11 @@ import javax.swing.filechooser.FileFilter;
 //Classe du filtre de fichier personnalisé aux fichiers de type JSON et XML
 public class CustomFileFilter extends FileFilter {
 	private CustomFileChooser fileChooser;
+        private static final String EXT_XML="xml";
+        private static final String EXT_JSON="json";
 	
 	public CustomFileFilter(CustomFileChooser fc) {
 		super();
-		
 		this.fileChooser = fc;
 	}
 
@@ -25,35 +26,8 @@ public class CustomFileFilter extends FileFilter {
 	    if (f.isDirectory()) {
 	        return true;
 	    }
-	    
-	    //Cas des fichiers JSON
-	    if(fileChooser.getExtension().equals("json")) {
-		    String extension = CustomFileType.getExtension(f);
-		    if (extension != null) {
-		        if (extension.equals(CustomFileType.json)) {
-		                return true;
-		        } else {
-		            return false;
-		        }
-		    }
-		    return false;
-	    }
-	    
-	    //Cas des fichiers XML
-	    if(fileChooser.getExtension().equals("xml")) {
-		    String extension = CustomFileType.getExtension(f);
-		    if (extension != null) {
-		        if (extension.equals(CustomFileType.xml)) {
-		                return true;
-		        } else {
-		            return false;
-		        }
-		    }
-		    return false;
-	    }
-	    
-	    //Autre types de fichiers
-	    return false;
+            String nomFichier = f.getName().toLowerCase(); 
+            return (nomFichier.endsWith(EXT_XML) || nomFichier.endsWith(EXT_JSON));
 	}
 
 	@Override
