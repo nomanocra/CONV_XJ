@@ -13,7 +13,7 @@ public class Main {
         xTj.convert();
 
         String url = "moodle.json";
-        String newurl = Saver.makeUrl(url, "xml");
+        String newurl = Saver.makePath(url, "xml");
         String textJSON = xTj.convert();
 
         JsonToXml jTx = new JsonToXml(textJSON);

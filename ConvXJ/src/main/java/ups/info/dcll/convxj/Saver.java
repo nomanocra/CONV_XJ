@@ -10,14 +10,14 @@ class Saver {
     /**
      * Enregistre le texte en xml dans un fichier
      *
-     * @param url l'url où stocker le fichier
+     * @param path le path où stocker le fichier
      * @param content
      *            contient le text à écrire dans le fichier
      * @return return true si tout c'est bien passé
      * lève une exception sinon
      */
-    public static boolean save(final String url, final String content) {
-        String newUrl = makeUrl(url, "xml");
+    public static boolean save(final String path, final String content) {
+        String newUrl = makePath(path, "xml");
         try {
             FileWriter fw = new FileWriter(newUrl, false);
             BufferedWriter bf = new BufferedWriter(fw);
@@ -36,15 +36,15 @@ class Saver {
     /**
      * Modifie l'extension du fichier de .xml a .json
      *
-     * @param url
-     *            url du fichier parsé
+     * @param path
+     *            path du fichier parsé
      * @param newExt
      *            extention du fichier à enregistrer
-     * @return l'url du fichier avec le même nom et la nouvelle extension
+     * @return le path du fichier avec le même nom et la nouvelle extension
      */
-    public static String makeUrl(final String url, final  String newExt) {
+    public static String makePath(final String path, final  String newExt) {
 
-        StringTokenizer st = new StringTokenizer(url, ".");
+        StringTokenizer st = new StringTokenizer(path, ".");
         String newUrl = "";
         int nbToken = st.countTokens();
 

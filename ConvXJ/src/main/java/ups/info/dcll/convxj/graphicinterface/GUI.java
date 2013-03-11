@@ -4,9 +4,8 @@
  */
 package ups.info.dcll.convxj.graphicinterface;
 
-import java.io.FileInputStream;
+
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,12 +18,11 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
-    FileInputStream entree;
-    FileOutputStream sortie;
+    
     boolean xmlActive;
     boolean jsonActive;
     String textXml, textJson;
-    String xmlPath, xsonPath;
+    String xmlPath, jsonPath;  
     
     public GUI() throws FileNotFoundException {
         initComponents();
@@ -66,6 +64,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         boutonImportJson.setText("import JSON");
+        boutonImportJson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boutonImportJsonActionPerformed(evt);
+            }
+        });
 
         fieldXmlPath.setText("C:/");
 
@@ -92,12 +95,15 @@ public class GUI extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boutonImportJson)
-                    .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boutonImportXml, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(boutonImportJson)
+                        .addComponent(fieldXmlPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldJsonPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(boutonImportXml, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {boutonImportJson, boutonImportXml});
@@ -200,20 +206,32 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
-        jsonActive = false;
-        xmlActive = true;
+
         boutonSave.setEnabled(true);
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
-        xmlActive = false;
-        jsonActive = true;
+
         boutonSave.setEnabled(true);
     }//GEN-LAST:event_boutonConvJXActionPerformed
 
     private void boutonImportXmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportXmlActionPerformed
         // TODO add your handling code here:
+        xmlActive = false;
+        jsonActive = true;
+        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
+        jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
     }//GEN-LAST:event_boutonImportXmlActionPerformed
+
+    private void boutonImportJsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonImportJsonActionPerformed
+        // TODO add your handling code here:
+        jsonActive = false;
+        xmlActive = true;
+        
+        jsonPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test.txt";
+        xmlPath = "C:\\Users\\David\\Documents\\Master1\\DCLL\\test2.txt";
+        
+    }//GEN-LAST:event_boutonImportJsonActionPerformed
 
     /**
      * @param args the command line arguments
