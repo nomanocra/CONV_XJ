@@ -15,9 +15,10 @@ public class XmlToJson {
         xmlSerializer = new XMLSerializer();
     }
 
-    public void convert() {
+    public String convert() {
         JSON json = xmlSerializer.read(xmlFile);
-        System.out.println(json.toString(2));
+        return json.toString(2);
+        //System.out.println(json.toString(2));
     }
     private static final String xmlFile = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
             + "<films>\n"
