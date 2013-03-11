@@ -1,8 +1,11 @@
 package ups.info.dcll.convxj;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.StringTokenizer;
 
 class Saver {
@@ -56,5 +59,24 @@ class Saver {
 
         return newUrl;
 
+    }
+    
+    public static String load(final String path) {
+    	String content = null;
+    	try {
+    		BufferedInputStream in = new BufferedInputStream(new FileInputStream(path));
+    		StringWriter out = new StringWriter();
+    		int b;
+    		while ((b=in.read()) != -1)
+    			out.write(b);
+    		out.flush();
+    		out.close();
+    		in.close();
+    		content = new String(out.toString());
+    	}
+    	catch (IOException ie) {
+    	         ie.printStackTrace(); 
+    	}
+		return content;
     }
 }
