@@ -16,7 +16,7 @@ import ups.info.dcll.convxj.xmltojson.XmlToJson;
 
 /**
  *
- * @author David Duuprat
+ * @author David Duprat
  * @author Alexis Paoleschi
  * 
  */
