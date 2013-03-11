@@ -90,9 +90,8 @@ public final class Saver {
             out.flush();
             out.close();
             in.close();
-            content = new String(out.toString());
+            content = out.toString();
         } catch (IOException ie) {
-            ie.printStackTrace();
         }
         return content;
     }
