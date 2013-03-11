@@ -11,9 +11,10 @@ public class Main {
     public static void main(String[] args) throws Exception {
         XmlToJson xTj=new XmlToJson();
         xTj.convert();
-        
-        JsonToXml jTx = new JsonToXml();
-        
-        jTx.convert();
+
+//        String textJSON = null ;
+//        String url = null ;
+//        JsonToXml jTx = new JsonToXml(textJSON, url); 
+//        jTx.convert();
     }
 }

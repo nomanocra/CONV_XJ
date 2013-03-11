@@ -1,16 +1,15 @@
 package ups.info.dcll.convxj.jsontoxml;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 
 import net.sf.json.JSON;
 import net.sf.json.JSONSerializer;
 import net.sf.json.xml.XMLSerializer;
 
-import org.apache.commons.io.IOUtils;
-
 /**
- *
+ * 
  * @author Legrand Mathieu
  * @author Mercier Guillaume
  * 
@@ -20,22 +19,57 @@ import org.apache.commons.io.IOUtils;
 // http://answers.oreilly.com/topic/279-how-to-convert-json-to-xml-in-java
 
 public class JsonToXml {
+	final private String textJson;
+	final private String url;
+
+	public JsonToXml(String json, String tempUrl) {
+		this.textJson = json;
+		this.url = tempUrl;
+	}
 
 	/**
-	 *
-	 * @throws IOException
-	 *             IOEXception s'il y a un problème de lecture du fichier
+	 * 
+	 * @return
 	 */
-	public final void convert() throws IOException {
-		InputStream is =
-				JsonToXml.class.getResourceAsStream("moodle.json");
-		String jsonData = IOUtils.toString(is);
-
+	public final String convert() {
 		XMLSerializer serializer = new XMLSerializer();
-		JSON json = JSONSerializer.toJSON(jsonData);
+		JSON json = JSONSerializer.toJSON(textJson);
 		serializer.setRootName("root");
 		serializer.setTypeHintsEnabled(false);
 		String xml = serializer.write(json);
-		System.out.println(xml);
+		return xml;
+	}
+
+	/**
+	 * Enregistre le texte en xml dans un fichier
+	 * 
+	 * @param xml
+	 * @return
+	 */
+	public final boolean save(String xml) {
+		String newUrl = makeUrl(url);
+		try {
+			FileWriter fw = new FileWriter(newUrl, false);
+			BufferedWriter bf = new BufferedWriter(fw);
+			bf.write(xml);
+			bf.flush();
+			bf.close();
+		} catch (IOException io) {
+			System.out.println("ERREUR : " + io);
+		}
+
+		System.out.println("Le fichier a été sauvegardé à l'adresse : "
+				+ newUrl);
+		return true;
+	}
+
+	/**
+	 * Modifie l'extension du fichier de .xml a .json
+	 * 
+	 * @param url
+	 * @return
+	 */
+	protected final String makeUrl(String url) {
+		return null;
 	}
 }

@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class TestJsonToXml {
 	protected JsonToXml jtx;
+	protected String textJSON;
+	protected String urlEnd;
 
 //	@BeforeClass
 //	public static void setUpBeforeClass() throws Exception {
@@ -21,7 +23,9 @@ public class TestJsonToXml {
 
 	@Before
 	public void setUp() throws Exception {
-		jtx = new JsonToXml();
+		textJSON = "";
+		urlEnd = "";
+		jtx = new JsonToXml(textJSON,urlEnd);
 	}
 
 	@After
@@ -30,7 +34,17 @@ public class TestJsonToXml {
 
 	@Test
 	public void testConvert() {
-		assertTrue(true);
+		assertEquals(jtx.convert(), "TODO MATHIEU");
+	}
+	
+	@Test
+	public void testSave() {
+		assertTrue(jtx.save("oui"));
+	}
+	
+	@Test
+	public void testmakeUrl() {
+		assertEquals("oui.json",jtx.makeUrl("oui.xml"));
 	}
 
 }
