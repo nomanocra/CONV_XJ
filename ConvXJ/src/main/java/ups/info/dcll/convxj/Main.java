@@ -3,8 +3,10 @@ package ups.info.dcll.convxj;
 import ups.info.dcll.convxj.xmltojson.XmlToJson;
 import ups.info.dcll.convxj.jsontoxml.JsonToXml;
 /**
- *
+ * 
  * @author Racim Fahssi
+ * @author Alexis Paoleschi
+ * 
  */
 public class Main {
 
