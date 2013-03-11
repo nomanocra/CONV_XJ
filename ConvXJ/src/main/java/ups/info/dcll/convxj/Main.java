@@ -15,7 +15,7 @@ public class Main {
         xTj.convert();
 
         String url = "moodle.json";
-        String newurl = Saver.makePath(url, "xml");
+        String newPath = Saver.makePath(url, "xml");
         String textJSON = xTj.convert();
 
         JsonToXml jTx = new JsonToXml(textJSON);
@@ -25,6 +25,6 @@ public class Main {
         System.out.println(textJSON);
         System.out.println(xml);
 
-        Saver.save(newurl, xml);
+        Saver.save(newPath, xml);
     }
 }
