@@ -1,7 +1,8 @@
 package ups.info.dcll.convxj;
 
-import ups.info.dcll.convxj.xmltojson.XmlToJson;
-import ups.info.dcll.convxj.jsontoxml.JsonToXml;
+import java.io.FileNotFoundException;
+
+import ups.info.dcll.convxj.graphicinterface.GUI;
 /**
  * 
  * @author Racim Fahssi
@@ -10,6 +11,7 @@ import ups.info.dcll.convxj.jsontoxml.JsonToXml;
  */
 public class Main {
 
+<<<<<<< HEAD
     public static void main(String[] args) {
         XmlToJson xTj = new XmlToJson();
         xTj.convert();
@@ -26,5 +28,10 @@ public class Main {
         System.out.println(xml);
 
         Saver.save(newPath, xml);
+=======
+    public static void main(String[] args) throws FileNotFoundException {
+		GUI gui = new GUI();
+		gui.setVisible(true);
+>>>>>>> eeb86d387fd572d6e1f721380b2c969eb06790de
     }
 }
