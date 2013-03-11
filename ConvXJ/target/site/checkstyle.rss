@@ -8,8 +8,13 @@
     <language>en-us</language>
     <copyright>&#169;2013</copyright>
     <item>
+<<<<<<< HEAD
       <title>File: 5,
              Errors: 27,
+=======
+      <title>File: 4,
+             Errors: 179,
+>>>>>>> dev/interface
              Warnings: 0,
              Infos: 0
       </title>
@@ -57,7 +62,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.graphicinterface.ToRename.java">ups/info/dcll/convxj/graphicinterface/ToRename.java</a>
+                  <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.graphicinterface.GUI.java">ups/info/dcll/convxj/graphicinterface/GUI.java</a>
                 </td>
                 <td>
                   0
@@ -66,7 +71,7 @@
                   0
                 </td>
                 <td>
-                  2
+                  140
                 </td>
               </tr>
                           <tr>
@@ -94,7 +99,11 @@
                   0
                 </td>
                 <td>
+<<<<<<< HEAD
                   1
+=======
+                  15
+>>>>>>> dev/interface
                 </td>
               </tr>
                       </tbody>
