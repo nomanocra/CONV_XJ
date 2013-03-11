@@ -17,24 +17,22 @@ import net.sf.json.xml.XMLSerializer;
 public class JsonToXml {
 
     /**
-     * @param textJson contient le JSON à parser
+     * @param xmlSerializer est le parser
      */
-    private String textJson;
+    private XMLSerializer serializer = new XMLSerializer();
 
     /**
-     *
-     * @param json le json à parser
+     * constructeur
      */
-    public JsonToXml(final String json) {
-        this.textJson = json;
+    public JsonToXml() {
+    	serializer = new XMLSerializer();
     }
 
     /**
      *
      * @return un String contenant du xml
      */
-    public final String convert() {
-        XMLSerializer serializer = new XMLSerializer();
+    public final String convert(String textJson) {
         JSON json = JSONSerializer.toJSON(textJson);
 
         serializer.setTypeHintsEnabled(false);
