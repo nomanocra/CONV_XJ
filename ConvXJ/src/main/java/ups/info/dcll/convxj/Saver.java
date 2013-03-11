@@ -92,6 +92,7 @@ public final class Saver {
             in.close();
             content = out.toString();
         } catch (IOException ie) {
+            ie.toString();
         }
         return content;
     }
