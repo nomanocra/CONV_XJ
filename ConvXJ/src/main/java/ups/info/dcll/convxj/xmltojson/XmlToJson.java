@@ -7,33 +7,39 @@ import net.sf.json.xml.XMLSerializer;
  *
  * @author Racim Fahssi
  * @author Alexis Paoleschi
- * 
+ *
  */
 public class XmlToJson {
 
-	/**
-     * @param textXml contient le XML à parser
+    /**
+     * @param xmlSerializer est le parser
      */
-    private String textXml;
+    private XMLSerializer xmlSerializer;
 
     /**
-     *
-     * @param xml le xml à parser
-     */
-    public XmlToJson(final String xml) {
-        this.textXml = xml;
+    * constructeur.
+    */
+    public XmlToJson() {
+        xmlSerializer = new XMLSerializer();
     }
-    
-    //fonction qui prend qui convertie le fichier XML_FILE en json, et l'affiche
-    //à l'écran (pour l'instant on l'utilise pour le debug)
-    public String convert() {
-    	XMLSerializer xmlSerializer = new XMLSerializer();
-        JSON json = xmlSerializer.read(textXml);
+
+    /**
+     * fonction qui convertie de l'xml au json.
+     *
+     * @param xml le contenu du fichier xml à convertir.
+     * @return le fichier json converti
+     */
+    public final String convert(final String xml) {
+        JSON json = xmlSerializer.read(xml);
+        //affichage à l'écran du resultat
+        //(pour l'instant on l'utilise pour le debug)
         System.out.println(json.toString(2));
         return json.toString(2);
     }
-    
-    //exemple de fichier xml, pour faire le test
+
+    /**
+     * @param XML_FILE exemple de fichier xml, pour faire le teste
+     */
     public static final String XML_FILE = "<?xml version=\"1.0\" "
             + "encoding=\"UTF-8\"?>\n"
             + "<films>\n"
