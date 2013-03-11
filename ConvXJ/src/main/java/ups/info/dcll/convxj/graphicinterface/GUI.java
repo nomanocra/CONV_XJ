@@ -217,7 +217,7 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boutonConvXJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvXJActionPerformed
-
+        textXml = textAreaXml.getText();
         boutonSave.setEnabled(true);
         textJson = new XmlToJson(textXml).convert();
         textAreaJson.setText(textJson);
@@ -225,7 +225,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_boutonConvXJActionPerformed
 
     private void boutonConvJXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConvJXActionPerformed
-
+        textJson = textAreaJson.getText();
         boutonSave.setEnabled(true);
         textXml = new JsonToXml(textJson).convert();
         textAreaXml.setText(textXml);
