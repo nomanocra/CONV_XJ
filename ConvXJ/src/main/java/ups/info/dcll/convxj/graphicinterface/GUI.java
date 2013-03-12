@@ -382,7 +382,7 @@ public class GUI extends javax.swing.JFrame {
 
         if (xmlFileChooser.getSelectedFile() != null) {
             xmlPath = xmlFileChooser.getSelectedFile().getAbsolutePath();
-
+            boutonSave.setEnabled(false);
             textXml = Saver.load(xmlPath);
             fieldXmlPath.setText(xmlPath);
             textAreaXml.setText(textXml);
@@ -402,6 +402,7 @@ public class GUI extends javax.swing.JFrame {
                 "Choisir un fichier JSON à importer");
         jsonFileChooser.showOpenDialog(this);
         if (jsonFileChooser.getSelectedFile() != null) {
+            boutonSave.setEnabled(false);
             jsonPath = jsonFileChooser.getSelectedFile().getAbsolutePath();
             textJson = Saver.load(jsonPath);
             fieldJsonPath.setText(jsonPath);
@@ -427,7 +428,7 @@ public class GUI extends javax.swing.JFrame {
                 xmlPath = jsonFileChooser.getSelectedFile().getAbsolutePath();
                 Saver.save(xmlPath + ".json", textXml);
             }
-        } else {
+        } else if (xmlActive){
             CustomFileChooser xmlFileChooser =
                     new CustomFileChooser("xml",
                     "Choisir un nom de fichier XML pour la sauvegarde");
