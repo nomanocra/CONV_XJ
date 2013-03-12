@@ -1,28 +1,31 @@
 package ups.info.dcll.convxj;
 
-import ups.info.dcll.convxj.xmltojson.XmlToJson;
-import ups.info.dcll.convxj.jsontoxml.JsonToXml;
+import java.io.FileNotFoundException;
+import ups.info.dcll.convxj.graphicinterface.GUI;
+
 /**
  *
  * @author Racim Fahssi
+ * @author Alexis Paoleschi
+ *
  */
-public class Main {
+public final class Main {
 
-    public static void main(String[] args) {
-        XmlToJson xTj = new XmlToJson();
-        xTj.convert();
+    /**
+     * classe utilitaire.
+     * constructeur prive
+     *
+     */
+    private Main() {  }
 
-        String url = "moodle.json";
-        String newurl = Saver.makeUrl(url, "xml");
-        String textJSON = xTj.convert();
-
-        JsonToXml jTx = new JsonToXml(textJSON);
-
-        String xml = jTx.convert();
-
-        System.out.println(textJSON);
-        System.out.println(xml);
-
-        Saver.save(newurl, xml);
+    /**
+     * fonction principale.
+     *
+     * @param args parametre du main.
+     * @throws FileNotFoundException si erreur
+     */
+    public static void main(final String[] args) throws FileNotFoundException {
+        GUI gui = new GUI();
+        gui.setVisible(true);
     }
 }

@@ -1,25 +1,40 @@
 package ups.info.dcll.convxj;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.StringTokenizer;
-
-class Saver {
+/**
+ *
+ * @author Legrand Mathieu
+ * @author Mercier Guillaume
+ * @author David Duprat
+ *
+ */
+public final class Saver {
 
     /**
-     * Enregistre le texte en xml dans un fichier
+     * Contructeur Saver.
+     */
+    private Saver() {
+
+    }
+    /**
+     * Enregistre le texte en xml dans un fichier.
      *
-     * @param url l'url où stocker le fichier
+     * @param path
+     *            le path où stocker le fichier
      * @param content
      *            contient le text à écrire dans le fichier
-     * @return return true si tout c'est bien passé
-     * lève une exception sinon
+     * @return return true si tout c'est bien passé lève une exception sinon
      */
-    public static boolean save(final String url, final String content) {
-        String newUrl = makeUrl(url, "xml");
+
+    public static boolean save(final String path, final String content) {
         try {
-            FileWriter fw = new FileWriter(newUrl, false);
+            FileWriter fw = new FileWriter(path, false);
             BufferedWriter bf = new BufferedWriter(fw);
             bf.write(content);
             bf.flush();
@@ -28,23 +43,22 @@ class Saver {
             System.out.println("ERREUR : " + io);
         }
 
-        System.out.println("Le fichier a été sauvegardé à l'adresse : "
-                + newUrl);
+        System.out.println("Le fichier a été sauvegardé à l'adresse : " + path);
         return true;
     }
 
     /**
-     * Modifie l'extension du fichier de .xml a .json
+     * Modifie l'extension du fichier de .xml a .json.
      *
-     * @param url
-     *            url du fichier parsé
+     * @param path
+     *            path du fichier parsé
      * @param newExt
      *            extention du fichier à enregistrer
-     * @return l'url du fichier avec le même nom et la nouvelle extension
+     * @return le path du fichier avec le même nom et la nouvelle extension
      */
-    public static String makeUrl(final String url, final  String newExt) {
+    public static String makePath(final String path, final String newExt) {
 
-        StringTokenizer st = new StringTokenizer(url, ".");
+        StringTokenizer st = new StringTokenizer(path, ".");
         String newUrl = "";
         int nbToken = st.countTokens();
 
@@ -56,5 +70,30 @@ class Saver {
 
         return newUrl;
 
+    }
+
+    /**
+     *
+     * @param path le path du fichier à lire
+     * @return le contenu du fichier
+     */
+    public static String load(final String path) {
+        String content = null;
+        try {
+            BufferedInputStream in = new BufferedInputStream(
+                    new FileInputStream(path));
+            StringWriter out = new StringWriter();
+            int b;
+            while ((b = in.read()) != -1) {
+                out.write(b);
+            }
+            out.flush();
+            out.close();
+            in.close();
+            content = out.toString();
+        } catch (IOException ie) {
+            ie.toString();
+        }
+        return content;
     }
 }

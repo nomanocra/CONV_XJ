@@ -4,6 +4,6 @@
 
 *.jar
 *~
-
+.form
 */target/*
 !*/target/site/

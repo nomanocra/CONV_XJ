@@ -27,7 +27,7 @@ public class TestJsonToXml {
 	public void setUp() throws Exception {
 		textJSON = "";
 		urlEnd = "";
-		jtx = new JsonToXml(textJSON);
+		jtx = new JsonToXml();
 	}
 
 	@After
@@ -36,13 +36,76 @@ public class TestJsonToXml {
 
 	@Test
 	public void testConvert() {
-		
-		String textXML = jtx.convert();
-		XmlToJson xTj=new XmlToJson();
-        String textJ = xTj.convert();        
-        JsonToXml testjTx = new JsonToXml(textJ);
-        
-		assertEquals(textXML, testjTx.convert());
-	}	
+
+	}
+	
+	private String getXML(){
+		return
+			"<quiz>" +
+			"<!-- question: 0 -->" +
+			"<question type=\"category\">" +
+			"<category>" +
+			"<text>$course$/Défaut pour 1SA3GL1</text>" +
+			"</category>" +
+			"</question>" +
+			"<!-- question: 37095 -->" +
+			"<question type=\"calculated\">" +
+			"<name><text>Aire du cercle</text></name>" +
+			"<questiontext format=\"moodle_auto_format\">" +
+			"<text>Calcul de l'aire du cercle ayant pour rayon {R}</text>" +
+			"</questiontext>" +
+			"<image />" +
+			"</question>" +
+			"<!-- question: 37096 -->" +
+			"<question type=\"description\">" +
+			"<name><text>Consigne dispositif électronique</text></name>" +
+			"<questiontext format=\"moodle_auto_format\">" +
+			"<text>Pas de calculatrice !</text>" +
+			"</questiontext>" +
+			"<image />" +
+			"<generalfeedback><text /></generalfeedback>" +
+			"<defaultgrade>0</defaultgrade>" +
+			"<penalty>0</penalty>" +
+			"<hidden>0</hidden>" +
+			"<shuffleanswers>0</shuffleanswers>" +
+			"</question>" +
+			"</quiz>";
+	}
+	
+	private String getJSON(){
+		return 
+			"{" +
+			"\"quiz\": {" +
+		    "\"question\": [" +
+		    "{" +
+		    "\"-type\": \"category\"," +
+		    "\"category\": { \"text\": \"$course$/Défaut pour 1SA3GL1\" }" +
+		    "}," +
+		    "{" +
+		    "\"-type\": \"calculated\"," +
+		    "\"name\": { \"text\": \"Aire du cercle\" }," +
+		    "\"questiontext\": {" +
+		    "\"-format\": \"moodle_auto_format\"," +
+		    "\"text\": \"Calcul de l'aire du cercle ayant pour rayon {R}\"" +
+		    "}" +
+		    "}," +
+		    "{" +
+		    "\"-type\": \"description\"," +
+		    "\"name\": { \"text\": \"Consigne dispositif électronique\" }," +
+		    "\"questiontext\": {" +
+		    "\"-format\": \"moodle_auto_format\"," +
+		    "\"text\": \"Pas de calculatrice !\"" +
+		    "}," +
+		    "\"generalfeedback\": {}," +
+		     "\"defaultgrade\": \"0\"," +
+		     "\"penalty\": \"0\"," +
+		     "\"hidden\": \"0\"," +
+		     "\"shuffleanswers\": \"0\"" +
+		     "}" +
+		     "]" +
+		  	 "}" +
+			 "}" +
+			 "}";
+	}
 
 }
