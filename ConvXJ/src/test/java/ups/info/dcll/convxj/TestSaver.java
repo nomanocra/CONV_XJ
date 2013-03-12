@@ -1,48 +1,74 @@
 package ups.info.dcll.convxj;
 
-import static org.junit.Assert.*;
+import ups.info.dcll.convxj.Saver;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-import org.junit.After;
-//import org.junit.AfterClass;
-import org.junit.Before;
-//import org.junit.BeforeClass;
-import org.junit.Test;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
-import ups.info.dcll.convxj.jsontoxml.JsonToXml;
+/**
+ * Unit test for simple App.
+ */
+public class TestSaver
+    extends TestCase
+{
 
-public class TestSaver {
-    @Before
-    public void setUp() throws Exception {
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public TestSaver( String testName )
+    {
+        super( testName );
+    }
+
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
+    {
+        return new TestSuite( TestSaver.class );
+    }
+
+    /**
+     * Rigourous Test
+     */
         
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    
     public void testMakeUrl()
     {
-        assertEquals("moodle.xml",Saver.makeUrl("moodle.json", "xml"));
+        assertEquals("moodle.xml",Saver.makePath("moodle.json", "xml"));
     }
     
     public void testSave() throws FileNotFoundException
     {
-        String content = "blabla\nblibli\nbloblo";
+        String content = "blabla\nblibli\nbloblo\n";
         String path = "testSave";
         
         Saver.save(path,content);
         
         Scanner scanner = new Scanner(new FileReader(path));
-        String str = null;
+        String str = "";
         while (scanner.hasNextLine()) {
-            str += scanner.nextLine();            
+            str += scanner.nextLine()+"\n";            
         }
-        
+        scanner.close();
+        File MyFile = new File("testSave");
+        MyFile.delete(); 
         assertEquals(content,str);
     }
+    
+    public void testLoad() throws FileNotFoundException
+    {
+        String str = "bla\nbli\nblo\n";
+        System.out.println(str);
+        System.out.println(Saver.load("testLoad"));
+        assertEquals(str, Saver.load("testLoad"));
+    }
+    
 }
