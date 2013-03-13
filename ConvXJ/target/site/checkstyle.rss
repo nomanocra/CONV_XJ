@@ -8,7 +8,7 @@
     <language>en-us</language>
     <copyright>&#169;2013</copyright>
     <item>
-      <title>File: 11,
+      <title>File: 12,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -85,20 +85,6 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.graphicinterface.GUI.java">ups/info/dcll/convxj/graphicinterface/GUI.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.graphicinterface.CustomFileFilter.java">ups/info/dcll/convxj/graphicinterface/CustomFileFilter.java</a>
                 </td>
                 <td>
@@ -113,7 +99,35 @@
               </tr>
                           <tr>
                 <td>
+                  <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.graphicinterface.GUI.java">ups/info/dcll/convxj/graphicinterface/GUI.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.graphicinterface.package-info.java">ups/info/dcll/convxj/graphicinterface/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://maven.apache.org/checkstyle.html#ups.info.dcll.convxj.jsontoxml.FormatXml.java">ups/info/dcll/convxj/jsontoxml/FormatXml.java</a>
                 </td>
                 <td>
                   0

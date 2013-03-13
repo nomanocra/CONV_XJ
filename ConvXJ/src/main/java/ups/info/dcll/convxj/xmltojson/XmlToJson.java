@@ -31,9 +31,6 @@ public class XmlToJson {
      */
     public final String convert(final String xml) {
         JSON json = xmlSerializer.read(xml);
-        //affichage à l'écran du resultat
-        //(pour l'instant on l'utilise pour le debug)
-        System.out.println(json.toString(2));
         return json.toString(2);
     }
 

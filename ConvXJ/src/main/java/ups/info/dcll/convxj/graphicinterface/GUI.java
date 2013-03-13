@@ -155,6 +155,7 @@ public class GUI extends javax.swing.JFrame {
     /**
      * fonction initLayout().
      * Initialise l'interface.
+     * 
      */
     private void initLayout() {
         javax.swing.GroupLayout layout =
@@ -252,7 +253,7 @@ public class GUI extends javax.swing.JFrame {
      * fonction initJPanel2Layout().
      * Initialise la partie centrale
      * de l'interface.
-     *
+     * 
      */
     private void initJPanel2Layout() {
         javax.swing.GroupLayout jPanel2Layout =
@@ -338,8 +339,8 @@ public class GUI extends javax.swing.JFrame {
 
     /**
      * fonction boutonConvXJActionPerformed().
-     *Permet la converstion de la partie xml en Json
-     *lorsqu'on clique sur le bouton correspondant
+     * Permet la converstion de la partie xml en Json 
+     * lorsqu'on clique sur le bouton correspondant  
      */
     private void boutonConvXJActionPerformed() {
         xmlActive = false;
@@ -440,7 +441,7 @@ public class GUI extends javax.swing.JFrame {
                 xmlPath = jsonFileChooser.getSelectedFile().getAbsolutePath();
                 Saver.save(xmlPath + ".json", textXml);
             }
-        } else if (xmlActive){
+        } else if (xmlActive) {
             CustomFileChooser xmlFileChooser =
                     new CustomFileChooser("xml",
                     "Choisir un nom de fichier XML pour la sauvegarde");
