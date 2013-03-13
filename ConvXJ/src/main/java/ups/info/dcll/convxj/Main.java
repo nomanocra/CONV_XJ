@@ -12,14 +12,14 @@ import ups.info.dcll.convxj.graphicinterface.GUI;
 public final class Main {
 
     /**
-     * classe utilitaire.
-     * constructeur prive
+     * Classe utilitaire.
+     * Constructeur prive
      *
      */
     private Main() {  }
 
     /**
-     * fonction principale.
+     * Fonction principale.
      *
      * @param args parametre du main.
      * @throws FileNotFoundException si erreur

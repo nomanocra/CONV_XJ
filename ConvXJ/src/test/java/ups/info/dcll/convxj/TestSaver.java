@@ -66,8 +66,6 @@ public class TestSaver
     public void testLoad() throws FileNotFoundException
     {
         String str = "bla\nbli\nblo\n";
-        System.out.println(str);
-        System.out.println(Saver.load("testLoad"));
         assertEquals(str, Saver.load("testLoad"));
     }
     

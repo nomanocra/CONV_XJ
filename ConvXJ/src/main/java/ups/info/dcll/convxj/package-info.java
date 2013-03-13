@@ -1,9 +1,9 @@
 /**
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
- * Copyright 2013 Conv XJ. All rights reserved.
+ * Copyright 2013 Conv_XJ. All rights reserved.
  *
- * here COPYRIGHT.
+ * Licence Apache
  */
 package ups.info.dcll.convxj;
 

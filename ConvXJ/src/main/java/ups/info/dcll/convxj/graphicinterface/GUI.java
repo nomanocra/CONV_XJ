@@ -428,7 +428,7 @@ public class GUI extends javax.swing.JFrame {
                 xmlPath = jsonFileChooser.getSelectedFile().getAbsolutePath();
                 Saver.save(xmlPath + ".json", textXml);
             }
-        } else if (xmlActive){
+        } else if (xmlActive) {
             CustomFileChooser xmlFileChooser =
                     new CustomFileChooser("xml",
                     "Choisir un nom de fichier XML pour la sauvegarde");
