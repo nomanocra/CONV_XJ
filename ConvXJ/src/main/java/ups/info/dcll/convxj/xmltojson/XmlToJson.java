@@ -35,7 +35,7 @@ public class XmlToJson {
     }
 
     /**
-     * @param XML_FILE exemple de fichier xml, pour faire le teste
+     * @param XML_FILE exemple de fichier xml, pour faire le teste.
      */
     public static final String XML_FILE = "<?xml version=\"1.0\" "
             + "encoding=\"UTF-8\"?>\n"

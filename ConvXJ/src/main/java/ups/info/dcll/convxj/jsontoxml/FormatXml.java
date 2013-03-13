@@ -44,6 +44,7 @@ public class FormatXml {
             throw new RuntimeException(e);
         }
     }
+
     /**
      *
      * @param xml le xml a parser
@@ -63,5 +64,4 @@ public class FormatXml {
             throw new RuntimeException(e);
         }
     }
-
 }

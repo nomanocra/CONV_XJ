@@ -1,4 +1,7 @@
 /**
+ * Ce package contient les classes qui gerent la convertion du Xml au Json.
+ *
+ *
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
  * Copyright 2013 Conv XJ. All rights reserved.

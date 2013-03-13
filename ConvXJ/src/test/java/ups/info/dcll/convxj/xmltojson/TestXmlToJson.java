@@ -7,38 +7,32 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class TestXmlToJson 
-    extends TestCase
-{
+public class TestXmlToJson
+        extends TestCase {
 
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-    public TestXmlToJson( String testName )
-    {
-        super( testName );
+    public TestXmlToJson(String testName) {
+        super(testName);
     }
 
     /**
      * @return the suite of tests being tested
      */
-    public static Test suite()
-    {
-        return new TestSuite( TestXmlToJson.class );
+    public static Test suite() {
+        return new TestSuite(TestXmlToJson.class);
     }
 
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
-    {
-        XmlToJson xTj=new XmlToJson();
-        assertEquals(xTj.convert(XML_FILE),JSON_FILE);
+    public void testApp() {
+        XmlToJson xTj = new XmlToJson();
+        assertEquals(xTj.convert(XML_FILE), JSON_FILE);
     }
-    
-    
     /**
      * @param XML_FILE exemple de fichier xml, pour faire le teste
      */
@@ -93,60 +87,59 @@ public class TestXmlToJson
             + "        </resume>\n"
             + "    </film>\n"
             + "</films>";
-    
-    public static final String JSON_FILE = "{\n" +
-"  \"realisateur\":   [\n" +
-"        {\n" +
-"      \"@id_realisateur\": \"real_01\",\n" +
-"      \"prenom\": \"Martin\",\n" +
-"      \"nom\": \"Scorsese\"\n" +
-"    },\n" +
-"        {\n" +
-"      \"@id_realisateur\": \"real_02\",\n" +
-"      \"prenom\": \"Quentin\",\n" +
-"      \"nom\": \"Tarantino\"\n" +
-"    },\n" +
-"        {\n" +
-"      \"@id_realisateur\": \"real_03\",\n" +
-"      \"prenom\": \"Steven\",\n" +
-"      \"nom\": \"Spielberg\"\n" +
-"    }\n" +
-"  ],\n" +
-"  \"film\":   [\n" +
-"        {\n" +
-"      \"@id_film\": \"film_01\",\n" +
-"      \"@id_realisateur\": \"real_03\",\n" +
-"      \"@annee\": \"2001\",\n" +
-"      \"titre\": \"Minority Report\",\n" +
-"      \"resume\": [\"Un homme est victime d'une machination. Il est pris au piège d'un système qu'il a l'habitude de controler.\"]\n" +
-"    },\n" +
-"        {\n" +
-"      \"@id_film\": \"film_02\",\n" +
-"      \"@id_realisateur\": \"real_02\",\n" +
-"      \"@annee\": \"2003\",\n" +
-"      \"titre\": \"Kill Bill\",\n" +
-"      \"resume\":       {\n" +
-"        \"image\": {\"@source\": \"killbill.jpg\"},\n" +
-"        \"text\": \"Une femme se venge des personnes qui ont voulu l'assassiner.\"\n" +
-"      }\n" +
-"    },\n" +
-"        {\n" +
-"      \"@id_film\": \"film_03\",\n" +
-"      \"@id_realisateur\": \"real_01\",\n" +
-"      \"@annee\": \"1995\",\n" +
-"      \"titre\": \"Casino\",\n" +
-"      \"resume\":       {\n" +
-"        \"image\": {\"@source\": \"deniro.jpg\"},\n" +
-"        \"text\": \"Le monde de la mafia italienne mêlée à celui des casinos...\"\n" +
-"      }\n" +
-"    },\n" +
-"        {\n" +
-"      \"@id_film\": \"film_04\",\n" +
-"      \"@id_realisateur\": \"real_01\",\n" +
-"      \"@annee\": \"1990\",\n" +
-"      \"titre\": \"Les affranchis\",\n" +
-"      \"resume\": [\"Inspiré d'un fait réel : histoire de mafia italienne.\"]\n" +
-"    }\n" +
-"  ]\n" +
-"}";
+    public static final String JSON_FILE = "{\n"
+            + "  \"realisateur\":   [\n"
+            + "        {\n"
+            + "      \"@id_realisateur\": \"real_01\",\n"
+            + "      \"prenom\": \"Martin\",\n"
+            + "      \"nom\": \"Scorsese\"\n"
+            + "    },\n"
+            + "        {\n"
+            + "      \"@id_realisateur\": \"real_02\",\n"
+            + "      \"prenom\": \"Quentin\",\n"
+            + "      \"nom\": \"Tarantino\"\n"
+            + "    },\n"
+            + "        {\n"
+            + "      \"@id_realisateur\": \"real_03\",\n"
+            + "      \"prenom\": \"Steven\",\n"
+            + "      \"nom\": \"Spielberg\"\n"
+            + "    }\n"
+            + "  ],\n"
+            + "  \"film\":   [\n"
+            + "        {\n"
+            + "      \"@id_film\": \"film_01\",\n"
+            + "      \"@id_realisateur\": \"real_03\",\n"
+            + "      \"@annee\": \"2001\",\n"
+            + "      \"titre\": \"Minority Report\",\n"
+            + "      \"resume\": [\"Un homme est victime d'une machination. Il est pris au piège d'un système qu'il a l'habitude de controler.\"]\n"
+            + "    },\n"
+            + "        {\n"
+            + "      \"@id_film\": \"film_02\",\n"
+            + "      \"@id_realisateur\": \"real_02\",\n"
+            + "      \"@annee\": \"2003\",\n"
+            + "      \"titre\": \"Kill Bill\",\n"
+            + "      \"resume\":       {\n"
+            + "        \"image\": {\"@source\": \"killbill.jpg\"},\n"
+            + "        \"text\": \"Une femme se venge des personnes qui ont voulu l'assassiner.\"\n"
+            + "      }\n"
+            + "    },\n"
+            + "        {\n"
+            + "      \"@id_film\": \"film_03\",\n"
+            + "      \"@id_realisateur\": \"real_01\",\n"
+            + "      \"@annee\": \"1995\",\n"
+            + "      \"titre\": \"Casino\",\n"
+            + "      \"resume\":       {\n"
+            + "        \"image\": {\"@source\": \"deniro.jpg\"},\n"
+            + "        \"text\": \"Le monde de la mafia italienne mêlée à celui des casinos...\"\n"
+            + "      }\n"
+            + "    },\n"
+            + "        {\n"
+            + "      \"@id_film\": \"film_04\",\n"
+            + "      \"@id_realisateur\": \"real_01\",\n"
+            + "      \"@annee\": \"1990\",\n"
+            + "      \"titre\": \"Les affranchis\",\n"
+            + "      \"resume\": [\"Inspiré d'un fait réel : histoire de mafia italienne.\"]\n"
+            + "    }\n"
+            + "  ]\n"
+            + "}";
 }

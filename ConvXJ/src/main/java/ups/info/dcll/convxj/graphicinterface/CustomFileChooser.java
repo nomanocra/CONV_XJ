@@ -8,7 +8,7 @@ import javax.swing.JFileChooser;
  *
  * @author Alexis Paoleschi
  *
-*/
+ */
 //Classe de choix de fichier personnalisé à un type de fichier
 public class CustomFileChooser extends JFileChooser {
 

@@ -7,7 +7,6 @@ import javax.swing.filechooser.FileFilter;
  * @author Alexis Paoleschi
  * @author Racim Fahssi
  */
-
 //Classe du filtre de fichier personnalisé aux fichiers de type JSON et XML
 public class CustomFileFilter extends FileFilter {
 

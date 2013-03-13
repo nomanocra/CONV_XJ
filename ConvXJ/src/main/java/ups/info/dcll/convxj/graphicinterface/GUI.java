@@ -154,9 +154,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initLayout.
-     * Initialise l'interface.
-     * 
+     * fonction initLayout. Initialise l'interface.
+     *
      */
     private void initLayout() {
         javax.swing.GroupLayout layout =
@@ -193,9 +192,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initJPanel1Layout.
-     * Initialise la partie haute
-     * de l'interface.
+     * fonction initJPanel1Layout. Initialise la partie haute de l'interface.
      */
     private void initJPanel1Layout() {
         javax.swing.GroupLayout jPanel1Layout =
@@ -251,10 +248,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initJPanel2Layout.
-     * Initialise la partie centrale
-     * de l'interface.
-     * 
+     * fonction initJPanel2Layout. Initialise la partie centrale de l'interface.
+     *
      */
     private void initJPanel2Layout() {
         javax.swing.GroupLayout jPanel2Layout =
@@ -309,8 +304,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initJPanel3Layout.
-     * Initialise la partie inférieure de 
+     * fonction initJPanel3Layout. Initialise la partie inférieure de
      * l'interface.
      */
     private void initJPanel3Layout() {
@@ -339,17 +333,16 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonConvXJActionPerformed.
-     * Permet la converstion de la partie xml en Json 
-     * lorsqu'on clique sur le bouton correspondant  
+     * fonction boutonConvXJActionPerformed. Permet la converstion de la partie
+     * xml en Json lorsqu'on clique sur le bouton correspondant
      */
     private void boutonConvXJActionPerformed() {
         xmlActive = false;
         jsonActive = true;
         textXml = textAreaXml.getText();
-        
-        
-        try{
+
+
+        try {
             textJson = new XmlToJson().convert(textXml);
             boutonSave.setEnabled(true);
             textAreaJson.setText(textJson);
@@ -357,45 +350,42 @@ public class GUI extends javax.swing.JFrame {
             jScrollXml.setBorder(null);
             textAreaJson.setBackground(Color.white);
             jScrollJson.setBorder(
-                javax.swing.BorderFactory.createLineBorder(borderColor, 2));
-        }catch (JSONException e){
+                    javax.swing.BorderFactory.createLineBorder(borderColor, 2));
+        } catch (JSONException e) {
             textAreaJson.setText("!!! erreur de traduction !! ");
             boutonSave.setEnabled(false);
         }
-        
+
     }
 
     /**
-     * fonction boutonConvJXActionPerformed. 
-     * Permet la converstion de la partie Json en xml
-     * lorsqu'on clique sur le bouton correspondant
+     * fonction boutonConvJXActionPerformed. Permet la converstion de la partie
+     * Json en xml lorsqu'on clique sur le bouton correspondant
      */
     private void boutonConvJXActionPerformed() {
         jsonActive = false;
         xmlActive = true;
         textJson = textAreaJson.getText();
-        
-        try{
+
+        try {
             textXml = new JsonToXml().convert(textJson);
             boutonSave.setEnabled(true);
             textAreaXml.setText(textXml);
             textAreaXml.setBackground(Color.white);
             jScrollXml.setBorder(
-                javax.swing.BorderFactory.createLineBorder(borderColor, 2));
+                    javax.swing.BorderFactory.createLineBorder(borderColor, 2));
             textAreaJson.setBackground(backGroundText);
             jScrollJson.setBorder(null);
-        }catch (JSONException e){
+        } catch (JSONException e) {
             textAreaXml.setText(" !!! erreur de traduction !!!");
             boutonSave.setEnabled(false);
         }
-        
+
     }
 
     /**
-     * fonction boutonImportXmlActionPerformed.
-     * Permet lorsqu'on appuie sur le bouton
-     * "import xml" d'importer un fichier xml
-     * pour le visualiser.
+     * fonction boutonImportXmlActionPerformed. Permet lorsqu'on appuie sur le
+     * bouton "import xml" d'importer un fichier xml pour le visualiser.
      */
     private void boutonImportXmlActionPerformed() {
         CustomFileChooser xmlFileChooser =
@@ -417,10 +407,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonImportJsonActionPerformed.
-     * Permet lorsqu'on appuie sur le bouton
-     * "import json" d'importer un fichier json
-     * pour le visualiser.
+     * fonction boutonImportJsonActionPerformed. Permet lorsqu'on appuie sur le
+     * bouton "import json" d'importer un fichier json pour le visualiser.
      */
     private void boutonImportJsonActionPerformed() {
         CustomFileChooser jsonFileChooser =
@@ -441,10 +429,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonSaveActionPerformed.
-     * Permet de sauvegarder dans le format
-     * xml ou json la traduciton
-     * qui a été faites précedement.
+     * fonction boutonSaveActionPerformed. Permet de sauvegarder dans le format
+     * xml ou json la traduciton qui a été faites précedement.
      */
     private void boutonSaveActionPerformed() {
         if (jsonActive) {

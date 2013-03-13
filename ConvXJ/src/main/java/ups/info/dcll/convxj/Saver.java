@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.StringTokenizer;
+
 /**
  *
  * @author Legrand Mathieu
@@ -20,18 +21,15 @@ public final class Saver {
      * Contructeur Saver.
      */
     private Saver() {
-
     }
+
     /**
      * Enregistre le texte en xml dans un fichier.
      *
-     * @param path
-     *            le path où stocker le fichier
-     * @param content
-     *            contient le text à écrire dans le fichier
+     * @param path le path où stocker le fichier
+     * @param content contient le text à écrire dans le fichier
      * @return return true si tout c'est bien passé lève une exception sinon
      */
-
     public static boolean save(final String path, final String content) {
         try {
             FileWriter fw = new FileWriter(path, false);
@@ -50,10 +48,8 @@ public final class Saver {
     /**
      * Modifie l'extension du fichier de .xml a .json.
      *
-     * @param path
-     *            path du fichier parsé
-     * @param newExt
-     *            extention du fichier à enregistrer
+     * @param path path du fichier parsé
+     * @param newExt extention du fichier à enregistrer
      * @return le path du fichier avec le même nom et la nouvelle extension
      */
     public static String makePath(final String path, final String newExt) {

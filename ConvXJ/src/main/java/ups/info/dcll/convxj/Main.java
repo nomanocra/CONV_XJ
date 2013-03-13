@@ -12,11 +12,11 @@ import ups.info.dcll.convxj.graphicinterface.GUI;
 public final class Main {
 
     /**
-     * Classe utilitaire.
-     * Constructeur prive
+     * Classe utilitaire. Constructeur prive
      *
      */
-    private Main() {  }
+    private Main() {
+    }
 
     /**
      * Fonction principale.
