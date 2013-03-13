@@ -153,7 +153,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initLayout().
+     * fonction initLayout.
      * Initialise l'interface.
      * 
      */
@@ -192,7 +192,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initJPanel1Layout().
+     * fonction initJPanel1Layout.
      * Initialise la partie haute
      * de l'interface.
      */
@@ -250,7 +250,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initJPanel2Layout().
+     * fonction initJPanel2Layout.
      * Initialise la partie centrale
      * de l'interface.
      * 
@@ -308,7 +308,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction initJPanel3Layout().
+     * fonction initJPanel3Layout.
      * Initialise la partie inférieure de 
      * l'interface.
      */
@@ -338,7 +338,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonConvXJActionPerformed().
+     * fonction boutonConvXJActionPerformed.
      * Permet la converstion de la partie xml en Json 
      * lorsqu'on clique sur le bouton correspondant  
      */
@@ -358,7 +358,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonConvJXActionPerformed(). 
+     * fonction boutonConvJXActionPerformed. 
      * Permet la converstion de la partie Json en xml
      * lorsqu'on clique sur le bouton correspondant
      */
@@ -377,7 +377,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonImportXmlActionPerformed().
+     * fonction boutonImportXmlActionPerformed.
      * Permet lorsqu'on appuie sur le bouton
      * "import xml" d'importer un fichier xml
      * pour le visualiser.
@@ -402,7 +402,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonImportJsonActionPerformed().
+     * fonction boutonImportJsonActionPerformed.
      * Permet lorsqu'on appuie sur le bouton
      * "import json" d'importer un fichier json
      * pour le visualiser.
@@ -426,7 +426,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction boutonSaveActionPerformed().
+     * fonction boutonSaveActionPerformed.
      * Permet de sauvegarder dans le format
      * xml ou json la traduciton
      * qui a été faites précedement.
