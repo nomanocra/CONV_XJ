@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
+import net.sf.json.JSONException;
 import ups.info.dcll.convxj.Saver;
 import ups.info.dcll.convxj.jsontoxml.JsonToXml;
 import ups.info.dcll.convxj.xmltojson.XmlToJson;
@@ -346,15 +347,22 @@ public class GUI extends javax.swing.JFrame {
         xmlActive = false;
         jsonActive = true;
         textXml = textAreaXml.getText();
-        boutonSave.setEnabled(true);
-        textJson = new XmlToJson().convert(textXml);
-        textAreaJson.setText(textJson);
-        textAreaXml.setBackground(backGroundText);
-        jScrollXml.setBorder(null);
-        textAreaJson.setBackground(Color.white);
-        jScrollJson.setBorder(
+        
+        
+        try{
+            textJson = new XmlToJson().convert(textXml);
+            boutonSave.setEnabled(true);
+            textAreaJson.setText(textJson);
+            textAreaXml.setBackground(backGroundText);
+            jScrollXml.setBorder(null);
+            textAreaJson.setBackground(Color.white);
+            jScrollJson.setBorder(
                 javax.swing.BorderFactory.createLineBorder(borderColor, 2));
-
+        }catch (JSONException e){
+            textAreaJson.setText("!!! erreur de traduction !! ");
+            boutonSave.setEnabled(false);
+        }
+        
     }
 
     /**
@@ -366,14 +374,21 @@ public class GUI extends javax.swing.JFrame {
         jsonActive = false;
         xmlActive = true;
         textJson = textAreaJson.getText();
-        boutonSave.setEnabled(true);
-        textXml = new JsonToXml().convert(textJson);
-        textAreaXml.setText(textXml);
-        textAreaXml.setBackground(Color.white);
-        jScrollXml.setBorder(
+        
+        try{
+            textXml = new JsonToXml().convert(textJson);
+            boutonSave.setEnabled(true);
+            textAreaXml.setText(textXml);
+            textAreaXml.setBackground(Color.white);
+            jScrollXml.setBorder(
                 javax.swing.BorderFactory.createLineBorder(borderColor, 2));
-        textAreaJson.setBackground(backGroundText);
-        jScrollJson.setBorder(null);
+            textAreaJson.setBackground(backGroundText);
+            jScrollJson.setBorder(null);
+        }catch (JSONException e){
+            textAreaXml.setText(" !!! erreur de traduction !!!");
+            boutonSave.setEnabled(false);
+        }
+        
     }
 
     /**
