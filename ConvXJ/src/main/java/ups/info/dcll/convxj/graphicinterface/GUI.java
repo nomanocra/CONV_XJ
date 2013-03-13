@@ -64,7 +64,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * initialisation de l'interface graphique.
+     * initialisation des composants graphiques.
      *
      */
     private void initComponents() {
@@ -153,8 +153,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction initLayout().
+     * Initialise l'interface.
      */
     private void initLayout() {
         javax.swing.GroupLayout layout =
@@ -191,8 +191,9 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction initJPanel1Layout().
+     * Initialise la partie haute
+     * de l'interface.
      */
     private void initJPanel1Layout() {
         javax.swing.GroupLayout jPanel1Layout =
@@ -248,7 +249,9 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction initJPanel2Layout().
+     * Initialise la partie centrale
+     * de l'interface.
      *
      */
     private void initJPanel2Layout() {
@@ -304,8 +307,9 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction initJPanel3Layout().
+     * Initialise la partie inférieure de 
+     * l'interface.
      */
     private void initJPanel3Layout() {
         javax.swing.GroupLayout jPanel3Layout =
@@ -333,8 +337,9 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction boutonConvXJActionPerformed().
+     *Permet la converstion de la partie xml en Json
+     *lorsqu'on clique sur le bouton correspondant
      */
     private void boutonConvXJActionPerformed() {
         xmlActive = false;
@@ -352,8 +357,9 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction boutonConvJXActionPerformed(). 
+     * Permet la converstion de la partie Json en xml
+     * lorsqu'on clique sur le bouton correspondant
      */
     private void boutonConvJXActionPerformed() {
         jsonActive = false;
@@ -370,8 +376,10 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction boutonImportXmlActionPerformed().
+     * Permet lorsqu'on appuie sur le bouton
+     * "import xml" d'importer un fichier xml
+     * pour le visualiser.
      */
     private void boutonImportXmlActionPerformed() {
         CustomFileChooser xmlFileChooser =
@@ -393,8 +401,10 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction boutonImportJsonActionPerformed().
+     * Permet lorsqu'on appuie sur le bouton
+     * "import json" d'importer un fichier json
+     * pour le visualiser.
      */
     private void boutonImportJsonActionPerformed() {
         CustomFileChooser jsonFileChooser =
@@ -415,8 +425,10 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
-     *
+     * fonction boutonSaveActionPerformed().
+     * Permet de sauvegarder dans le format
+     * xml ou json la traduciton
+     * qui a été faites précedement.
      */
     private void boutonSaveActionPerformed() {
         if (jsonActive) {
