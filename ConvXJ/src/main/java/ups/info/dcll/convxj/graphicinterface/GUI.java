@@ -153,7 +153,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction initLayout.
      *
      */
     private void initLayout() {
@@ -191,7 +191,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction initJPanel1Layout.
      *
      */
     private void initJPanel1Layout() {
@@ -248,7 +248,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction initJPanel2Layout.
      *
      */
     private void initJPanel2Layout() {
@@ -304,7 +304,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction initJPanel3Layout.
      *
      */
     private void initJPanel3Layout() {
@@ -333,7 +333,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction boutonConvXJActionPerformed.
      *
      */
     private void boutonConvXJActionPerformed() {
@@ -352,7 +352,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction boutonConvJXActionPerformed.
      *
      */
     private void boutonConvJXActionPerformed() {
@@ -370,7 +370,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction boutonImportXmlActionPerformed.
      *
      */
     private void boutonImportXmlActionPerformed() {
@@ -393,7 +393,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction boutonImportJsonActionPerformed.
      *
      */
     private void boutonImportJsonActionPerformed() {
@@ -415,7 +415,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     /**
-     * fonction XXX.
+     * fonction boutonSaveActionPerformed.
      *
      */
     private void boutonSaveActionPerformed() {
